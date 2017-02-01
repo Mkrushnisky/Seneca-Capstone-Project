@@ -35,6 +35,8 @@
 .top-nav>li {
     display: inline-block;
     float: left;
+    top: 13px;
+    left: -1px;
 }
 
 .top-nav>li>a {

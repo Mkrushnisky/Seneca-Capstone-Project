@@ -9,3 +9,10 @@ C:\Users\Jay\AppData\Roaming\Skype\My Skype Received Files\A1 - Website UI\A1 - 
 C:\Users\Jay\AppData\Roaming\Skype\My Skype Received Files\A1 - Website UI\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.pdb
 C:\Users\Jay\AppData\Roaming\Skype\My Skype Received Files\A1 - Website UI\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
 C:\Users\Jay\AppData\Roaming\Skype\My Skype Received Files\A1 - Website UI\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
+C:\Users\Jay\AppData\Roaming\Skype\My Skype Received Files\A1 - Website UI\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll.config
+D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll
+D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.pdb
+D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
+D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb

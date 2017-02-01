@@ -69,6 +69,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Image\add-button-md.png" />
     <Content Include="Login old.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
@@ -81,15 +82,18 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\Dashboard.js" />
-    <Content Include="Supplier.aspx" />
+    <Content Include="SupplierAdd.aspx" />
+    <Content Include="SupplierEdit.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="search.aspx" />
+    <Content Include="SupplierResults.aspx" />
     <Content Include="SearchMenu.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="default.aspx.cs">
@@ -114,12 +118,12 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="search.aspx.cs">
-      <DependentUpon>search.aspx</DependentUpon>
+    <Compile Include="SupplierResults.aspx.cs">
+      <DependentUpon>SupplierResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="search.aspx.designer.cs">
-      <DependentUpon>search.aspx</DependentUpon>
+    <Compile Include="SupplierResults.aspx.designer.cs">
+      <DependentUpon>SupplierResults.aspx</DependentUpon>
     </Compile>
     <Compile Include="SearchMenu.aspx.cs">
       <DependentUpon>SearchMenu.aspx</DependentUpon>
@@ -135,12 +139,19 @@
     <Compile Include="TrueMaster.Master.designer.cs">
       <DependentUpon>TrueMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="Supplier.aspx.cs">
-      <DependentUpon>Supplier.aspx</DependentUpon>
+    <Compile Include="SupplierAdd.aspx.cs">
+      <DependentUpon>SupplierAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Supplier.aspx.designer.cs">
-      <DependentUpon>Supplier.aspx</DependentUpon>
+    <Compile Include="SupplierAdd.aspx.designer.cs">
+      <DependentUpon>SupplierAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierEdit.aspx.cs">
+      <DependentUpon>SupplierEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierEdit.aspx.designer.cs">
+      <DependentUpon>SupplierEdit.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
