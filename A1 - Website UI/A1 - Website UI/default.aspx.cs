@@ -11,7 +11,7 @@ namespace A1___Website_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string returnUrl = "~/search.aspx";
+            string returnUrl = "~/SearchMenu.aspx";
 
             // check if it exists, if not then redirect to default page
             if (!(returnUrl == null))
