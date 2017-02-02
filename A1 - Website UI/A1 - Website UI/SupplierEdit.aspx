@@ -88,10 +88,10 @@
     <tr>
         <td style="width: 181px"></td>
         <td style="text-align: right"">
-            <asp:Button ID="Button1" runat="server" Text="Save" Width="62px"  />
+            <asp:Button ID="Button1" runat="server" Text="Save" Width="62px" OnClick="Button1_Click"  />
             </td>
         <td>
-            <asp:Button ID="Button2" runat="server" Text="Cancel" Width="73px" />
+            <asp:Button ID="Button2" runat="server" Text="Cancel" Width="73px" OnClick="Button2_Click" />
         </td>
     </tr>
     </table>
