@@ -39,6 +39,13 @@
     <script src="Scripts/jquery-1.9.0.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
 
+        <style type="text/css">
+            .auto-style1 {
+                left: -4px;
+                top: -29px;
+            }
+        </style>
+
     </head>
 
 
@@ -64,7 +71,7 @@
 		<form id="form1" runat="server">
 			<h1>Login Form</h1>
 			<div>
-                <asp:TextBox ID="UserEmail" runat="server" />
+                <asp:TextBox ID="UserEmail" placeholder="Username" runat="server" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
                  ControlToValidate="UserEmail"
                   Display="Dynamic" 
@@ -73,7 +80,7 @@
 				<!--<input type="text" placeholder="Username" required="" id="username" />-->
 			</div>
 			<div>
-                <asp:TextBox ID="UserPass" TextMode="Password" 
+                <asp:TextBox ID="UserPass" placeholder="Password" TextMode="Password" 
              runat="server" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
             ControlToValidate="UserPass"
@@ -83,14 +90,13 @@
 			</div>
 			<div>
                  <asp:Button ID="Submit1" OnClick="Logon_Click" Text="Log On" 
-       runat="server" />
+       runat="server" CssClass="auto-style1" />
                 <p>
                  <asp:Label ID="Msg" ForeColor="red" runat="server" />
                     </p>
 				<!--<input type="button" onclick="check(this.form)" value="Login"/>-->
-            <input type="reset" value="Cancel"/>
-                Remember me?
-                 <asp:CheckBox ID="Persist" runat="server" />
+                <p style="color:black">Remember me?
+                 <asp:CheckBox ID="Persist" runat="server" /></p>
 				<a href="#">Lost your password?</a>
 				<a href="#">Register</a>
 			</div>
