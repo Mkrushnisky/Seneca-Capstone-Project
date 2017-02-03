@@ -16,9 +16,15 @@ D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\b
 D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
 D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
 D:\One drive\OneDrive\school\10th semester\BTS\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
-D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll.config
-D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll
-D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.pdb
-D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
-D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
-D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
+C:\Users\Medievals\Desktop\Team22Repo-master(1)\Team22Repo-master\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll.config
+C:\Users\Medievals\Desktop\Team22Repo-master(1)\Team22Repo-master\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll
+C:\Users\Medievals\Desktop\Team22Repo-master(1)\Team22Repo-master\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.pdb
+C:\Users\Medievals\Desktop\Team22Repo-master(1)\Team22Repo-master\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+C:\Users\Medievals\Desktop\Team22Repo-master(1)\Team22Repo-master\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
+C:\Users\Medievals\Desktop\Team22Repo-master(1)\Team22Repo-master\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
+C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll.config
+C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll
+C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.pdb
+C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
+C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb

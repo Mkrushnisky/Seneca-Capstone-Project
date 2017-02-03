@@ -25,5 +25,15 @@ namespace A1___Website_UI
             }
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchMenu.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchMenu.aspx");
+        }
     }
 }
