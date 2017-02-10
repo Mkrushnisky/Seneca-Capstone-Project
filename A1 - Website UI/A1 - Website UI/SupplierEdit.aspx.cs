@@ -16,20 +16,12 @@ namespace A1___Website_UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string returnUrl = "~/SearchMenu.aspx";
-
-            // check if it exists, if not then redirect to default page
-            if (!(returnUrl == null))
-                Response.Redirect(returnUrl);
+            Response.Redirect("~/SearchMenu.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string returnUrl = "~/SearchMenu.aspx";
-
-            // check if it exists, if not then redirect to default page
-            if (!(returnUrl == null))
-                Response.Redirect(returnUrl);
+            Response.Redirect("~/SearchMenu.aspx");
         }
     }
 }

@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TrueMaster.Master" AutoEventWireup="true" CodeBehind="SearchMenu.aspx.cs" Inherits="A1___Website_UI.SearchMenu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 415px;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
@@ -8,19 +13,19 @@
     <table style="margin:auto">
         <tr>
             <th></th>
-            <td></td>
+            <td class="auto-style1"></td>
         </tr>
         <tr>
             <th></th>
-            <td></td>
+            <td class="auto-style1"></td>
         </tr>
         <tr>
             <th></th>
-            <td></td>
+            <td class="auto-style1"></td>
         </tr>
         <tr>
             <th colspan="2" style="text-align:center">
-                <h4>Supplier Search</h4>    
+                <h3>Supplier Search</h3>    
             </th>
         </tr>
         <tr>
@@ -28,10 +33,10 @@
         </tr>
         <tr style="height:35px">
             <td style="font-weight:700; text-align:right">
-                Category   
+                <h5>Category</h5>   
             </td>
-            <td  style="Width:325px; text-align:right;">
-                <asp:DropDownList ID="DropDownList2" runat="server" Width="300px" style="color:black;">
+            <td  style="text-align:left; padding-left:15px" class="auto-style1">
+                <asp:DropDownList ID="DropDownList2" CssClass="txtbox" runat="server" Width="300px" style="color:black;">
                     <asp:ListItem></asp:ListItem>
                     <asp:ListItem>Plastics</asp:ListItem>
                     <asp:ListItem>Chemicals</asp:ListItem>
@@ -42,10 +47,10 @@
         </tr>
         <tr style="height:35px">
             <td style="font-weight:700; text-align:right">
-                Sub-Category   
+                <h5>Sub-Category</h5>   
             </td>
-            <td style="Width:325px; text-align:right;">
-                <asp:DropDownList ID="DropDownList3" runat="server" Width="300px" style="color:black;" >
+            <td style="text-align:left; padding-left:15px" class="auto-style1">
+                <asp:DropDownList ID="DropDownList3" CssClass="txtbox" runat="server" Width="300px" style="color:black;" >
                     <asp:ListItem></asp:ListItem>
                     <asp:ListItem>Polyurethanes</asp:ListItem>
                     <asp:ListItem>Acrylic</asp:ListItem>
@@ -60,10 +65,10 @@
         </tr>
         <tr style="height:35px">
             <td style="font-weight:700; text-align:right">
-                Supplier   
+                <h5>Supplier</h5>   
             </td>
-            <td style="Width:325px; text-align:right;">
-                <asp:DropDownList ID="DropDownList1" runat="server" Width="300px" style="color:black;">
+            <td style="text-align:left; padding-left:15px" class="auto-style1">
+                <asp:DropDownList ID="DropDownList1" CssClass="txtbox" runat="server" Width="300px" style="color:black;">
                     <asp:ListItem></asp:ListItem>
                     <asp:ListItem>YKK AP America Inc.</asp:ListItem>
                     <asp:ListItem>Whitehall Industries</asp:ListItem>
