@@ -36,13 +36,12 @@
                 <h5>Category</h5>   
             </td>
             <td  style="text-align:left; padding-left:15px" class="auto-style1">
-                <asp:DropDownList ID="DropDownList2" CssClass="txtbox" runat="server" Width="300px" style="color:black;">
-                    <asp:ListItem></asp:ListItem>
-                    <asp:ListItem>Plastics</asp:ListItem>
-                    <asp:ListItem>Chemicals</asp:ListItem>
-                    <asp:ListItem>Steel</asp:ListItem>
-                    <asp:ListItem>Electronics</asp:ListItem>
+                <asp:DropDownList ID="CategoryDropDownList" CssClass="txtbox" runat="server" Width="300px" style="color:black;" DataSourceID="CategoryDataSource" DataTextField="CName" DataValueField="CatId" AutoPostBack="True" AppendDataBoundItems="true" OnSelectedIndexChanged="CategoryDropDownList_SelectedIndexChanged" InitialValue="NA" >
+
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="CategoryDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BTSDatabase %>" ProviderName="<%$ ConnectionStrings:BTSDatabase.ProviderName %>" SelectCommand="SELECT * FROM Category">
+
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr style="height:35px">
@@ -50,17 +49,14 @@
                 <h5>Sub-Category</h5>   
             </td>
             <td style="text-align:left; padding-left:15px" class="auto-style1">
-                <asp:DropDownList ID="DropDownList3" CssClass="txtbox" runat="server" Width="300px" style="color:black;" >
-                    <asp:ListItem></asp:ListItem>
-                    <asp:ListItem>Polyurethanes</asp:ListItem>
-                    <asp:ListItem>Acrylic</asp:ListItem>
-                    <asp:ListItem>Carbon Black - Fillers</asp:ListItem>
-                    <asp:ListItem>FBE - Paints</asp:ListItem>
-                    <asp:ListItem>Galvanizing</asp:ListItem>
-                    <asp:ListItem>Steel Bars</asp:ListItem>
-                    <asp:ListItem>Batteries</asp:ListItem>
-                    <asp:ListItem>Sensors</asp:ListItem>
+                <asp:DropDownList ID="SubCategoryDropDownList" CssClass="txtbox" runat="server" Width="300px" style="color:black;" DataSourceID="SubCategoryDataSource" DataTextField="SCName" DataValueField="SubCatId" AutoPostBack="True" AppendDataBoundItems="true">
+                      <asp:ListItem Text="" Value="0" />
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SubCategoryDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BTSDatabase %>" ProviderName="<%$ ConnectionStrings:BTSDatabase.ProviderName %>" SelectCommand="SELECT * FROM SubCategory WHERE (CatId = ?)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="CategoryDropDownList" Name="CatId" PropertyName="SelectedValue" Type="Int32" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr style="height:35px">
@@ -68,18 +64,19 @@
                 <h5>Supplier</h5>   
             </td>
             <td style="text-align:left; padding-left:15px" class="auto-style1">
-                <asp:DropDownList ID="DropDownList1" CssClass="txtbox" runat="server" Width="300px" style="color:black;">
-                    <asp:ListItem></asp:ListItem>
-                    <asp:ListItem>YKK AP America Inc.</asp:ListItem>
-                    <asp:ListItem>Whitehall Industries</asp:ListItem>
-                    <asp:ListItem>Tri-City Extrusion Inc.</asp:ListItem>
-                    <asp:ListItem>Taber Extrusions LLC</asp:ListItem>
+                <asp:DropDownList ID="SupplierDropDownList" CssClass="txtbox" runat="server" Width="300px" style="color:black;" DataSourceID="SupplierDataSource" DataTextField="SName" DataValueField="SupId">
+
                 </asp:DropDownList>
+                <asp:SqlDataSource ID="SupplierDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BTSDatabase %>" ProviderName="<%$ ConnectionStrings:BTSDatabase.ProviderName %>" SelectCommand="SELECT Supplier.* FROM SubCatSupplier INNER JOIN SubCategory ON SubCatSupplier.SubCatId = SubCategory.SubCatId INNER JOIN Supplier ON SubCatSupplier.SupId = Supplier.SupId WHERE (SubCatSupplier.SubCatId = ? AND SubCatSupplier.SupId = Supplier.SupId)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="SubCategoryDropDownList" Name="SubCatId" PropertyName="SelectedValue" Type="Int32" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </td>
         </tr>
         <tr>
             <td colspan="2" style="text-align:right">
-                <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
+                <asp:Button ID="SearchButton" runat="server" Text="Search" OnClick="Button1_Click" />
             </td>
         </tr>
 

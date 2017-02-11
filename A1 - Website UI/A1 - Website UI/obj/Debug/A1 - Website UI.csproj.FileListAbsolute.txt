@@ -28,3 +28,9 @@ C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.p
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
+D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll.config
+D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll
+D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.pdb
+D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
+D:\team 22 repo\Team22Repo\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
