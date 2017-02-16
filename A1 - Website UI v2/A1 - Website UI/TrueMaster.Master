@@ -1,0 +1,214 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TrueMaster.master.cs" Inherits="A1___Website_UI.TrueMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script runat="server">
+
+    void Signout_Click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        Response.Redirect("Logon.aspx");
+    }
+</script>
+
+<head>
+    <link href="Content/Sidebar.css" rel="stylesheet" />
+    <link href="Content/menu.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.css">
+    <!-- Bootstrap -->
+    <link href="content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="Scripts/jquery-1.9.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="Scripts/Dashboard.js"></script>
+    <link href="Content/Dashboard.css" rel="stylesheet" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .txtbox
+        {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding:0 0 0 5px;
+        }
+        .dropbox
+        {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+
+    <!--
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">DG & Associates Inc.</a>
+            </p>
+        </div>
+        <div class="float-right">
+            <section id="login">
+
+                <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <ul>
+                            <li><a id="A1" href="~/Account/Register">Register</a></li>
+                            <li><a id="A2" href="~/Account/Login">Log in</a></li>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <p>
+                            Hello, <a class="username" href="~/Account/Manage" title="Manage your account">
+                                <asp:LoginName runat="server" CssClass="username" />
+                            </a>!
+                               
+                                    
+                        </p>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+
+            </section>
+            
+        </div>
+    </div>-->
+    
+    <div id="throbber" style="display:none; min-height:120px;"></div>
+<div id="noty-holder"></div>
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://cijulenlinea.ucr.ac.cr/dev-users/">
+                <img src="http://placehold.it/200x50&text=LOGO" alt="LOGO"">
+            </a>
+        </div>
+        <!-- Top Menu Items -->
+        <ul class="nav navbar-right top-nav">
+            <li><a href="#" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Stats"><i class="fa fa-bar-chart-o"></i>
+                </a>
+                
+            </li>      
+          
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li>
+                    <a href="SearchMenu.aspx" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> Search <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-1" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Category</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Sub-Category</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Contacts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a onclick="validateUser" href="SupplierAdd.aspx" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  Add <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-2" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Category</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Sub-Category</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Contacts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="investigaciones/favoritas"><i class="fa fa-fw fa-user-plus"></i>  MENU 3</a>
+                </li>
+                <li>
+                    <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i> MENU 4</a>
+                </li>
+                <li>
+                    <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+     <form id="Form1" runat="server">
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row" id="main" >
+                <div class="col-sm-12 col-md-12 well" id="content">
+                    
+                    
+                     <div>
+                         
+        <asp:ContentPlaceHolder ID="body1" runat="server">
+        </asp:ContentPlaceHolder>
+                              
+    </div>
+                    
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+    </form>
+</div><!-- /#wrapper -->
+    
+   
+
+
+
+   
+    
+
+
+
+
+
+
+
+
+    
+    <footer>
+        <hr />
+        <li><a>DG & Associates Inc.</a></li>
+    </footer>
+
+
+
+
+</body>
+
+
+
+</html>
