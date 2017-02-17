@@ -13,31 +13,31 @@ namespace A1___Website_UI {
     public partial class SearchMenu {
         
         /// <summary>
-        /// DropDownList2 control.
+        /// DropDownCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownCategory;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// DropDownSubCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownSubCategory;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// DropDownSupplier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownSupplier;
         
         /// <summary>
         /// Button1 control.

@@ -116,8 +116,8 @@
         <td class="auto-style8">
             <asp:TextBox ID="GetSupNum" runat="server" Visible="false" Width="26px" ></asp:TextBox>
             <asp:TextBox ID="Addressid" runat="server" Width="42px" Visible="false"></asp:TextBox>
-            <asp:HiddenField ID="SupIdHF" runat="server" Value="13" />
-            <asp:ListBox ID="subcatlistboxcount" runat="server" Visible="true"></asp:ListBox>
+            <asp:HiddenField ID="SupIdHF" runat="server"  />
+            <asp:ListBox ID="subcatlistboxcount" runat="server" Visible="false"></asp:ListBox>
         </td>
         <td style="color:black;" class="auto-style9"><asp:TextBox CssClass="txtbox" ID="CityTB" runat="server" placeholder="City" Width="115px"></asp:TextBox>
             <asp:DropDownList ID="CountryDDL" runat="server" CssClass="txtbox" OnSelectedIndexChanged="CountryDDL_SelectedIndexChanged" AutoPostBack="True">
