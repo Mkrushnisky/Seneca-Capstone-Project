@@ -20,7 +20,7 @@ namespace A1___Website_UI
         {
             if (!IsPostBack)
             {
-                GetSupNum.Text = Request.QueryString["supplier"];
+                SupIdHF.Value = Request.QueryString["supplier"];
                 SupplierBind();
                 CategoryBind();
                 SubCategoryBind(sender, e);
