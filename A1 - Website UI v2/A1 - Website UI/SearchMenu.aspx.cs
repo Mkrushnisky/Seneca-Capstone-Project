@@ -36,11 +36,11 @@ namespace A1___Website_UI
                     {
                         if (reader.HasRows)
                         {
-                            DropDownList2.DataSource = reader;
-                            DropDownList2.DataValueField = "CatId";
-                            DropDownList2.DataTextField = "CName";
-                            DropDownList2.DataBind();
-                            DropDownList2.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
+                            DropDownCategory.DataSource = reader;
+                            DropDownCategory.DataValueField = "CatId";
+                            DropDownCategory.DataTextField = "CName";
+                            DropDownCategory.DataBind();
+                            DropDownCategory.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
                         }
                     }
                 }
@@ -52,18 +52,18 @@ namespace A1___Website_UI
             using (var conn = new MySqlConnection(strcon))
             {
                 conn.Open();
-                string Query = "SELECT * FROM SubCategory WHERE CatId ='" + DropDownList2.SelectedValue + "'";
+                string Query = "SELECT * FROM SubCategory WHERE CatId ='" + DropDownCategory.SelectedValue + "'";
                 using (var cmd = new MySqlCommand(Query, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.HasRows)
                         {
-                            DropDownList3.DataSource = reader;
-                            DropDownList3.DataValueField = "SubCatId";
-                            DropDownList3.DataTextField = "SCName";
-                            DropDownList3.DataBind();
-                            DropDownList3.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
+                            DropDownSubCategory.DataSource = reader;
+                            DropDownSubCategory.DataValueField = "SubCatId";
+                            DropDownSubCategory.DataTextField = "SCName";
+                            DropDownSubCategory.DataBind();
+                            DropDownSubCategory.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
                         }
                     }
                 }
@@ -75,18 +75,18 @@ namespace A1___Website_UI
             using (var conn = new MySqlConnection(strcon))
             {
                 conn.Open();
-                string Query = "SELECT Supplier.* FROM Supplier INNER JOIN SubCatSupplier ON Supplier.SupId = SubCatSupplier.SupId INNER JOIN SubCategory ON SubCatSupplier.SubCatId = SubCategory.SubCatId WHERE SubCatSupplier.SubCatId ='" + DropDownList3.SelectedValue + "' AND SubCatSupplier.SupId = Supplier.SupId";
+                string Query = "SELECT Supplier.* FROM Supplier INNER JOIN SubCatSupplier ON Supplier.SupId = SubCatSupplier.SupId INNER JOIN SubCategory ON SubCatSupplier.SubCatId = SubCategory.SubCatId WHERE SubCatSupplier.SubCatId ='" + DropDownSubCategory.SelectedValue + "' AND SubCatSupplier.SupId = Supplier.SupId";
                 using (var cmd = new MySqlCommand(Query, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.HasRows)
                         {
-                            DropDownList1.DataSource = reader;
-                            DropDownList1.DataValueField = "SupId";
-                            DropDownList1.DataTextField = "SName";
-                            DropDownList1.DataBind();
-                            DropDownList1.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
+                            DropDownSupplier.DataSource = reader;
+                            DropDownSupplier.DataValueField = "SupId";
+                            DropDownSupplier.DataTextField = "SName";
+                            DropDownSupplier.DataBind();
+                            DropDownSupplier.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
                         }
                     }
                 }
@@ -95,17 +95,29 @@ namespace A1___Website_UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/SupplierResults.aspx");
+            Response.Redirect("~/SupplierResults.aspx?supplier=" + DropDownSupplier.SelectedValue + "");
         }
 
-        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DropDownCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             SubCategoryBind(sender, e);
         }
 
-        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DropDownSubCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             SupplierBind(sender, e);
+        }
+
+        protected void DropDownSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropDownSupplier.SelectedItem.Text == "--- Choose One ---")
+            {
+                Button1.Enabled = false;
+            }
+            else
+            {
+                Button1.Enabled = true;
+            }
         }
     }
 }

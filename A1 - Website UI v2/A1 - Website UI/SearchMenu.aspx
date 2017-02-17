@@ -36,7 +36,7 @@
                 <h5>Category</h5>   
             </td>
             <td  style="text-align:left; padding-left:15px" class="auto-style1">
-                <asp:DropDownList ID="DropDownList2" CssClass="txtbox" runat="server" Width="300px" style="color:black;" AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                <asp:DropDownList ID="DropDownCategory" CssClass="txtbox" runat="server" Width="300px" style="color:black;" AutoPostBack="true" OnSelectedIndexChanged="DropDownCategory_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -45,7 +45,7 @@
                 <h5>Sub-Category</h5>   
             </td>
             <td style="text-align:left; padding-left:15px" class="auto-style1">
-                <asp:DropDownList ID="DropDownList3" CssClass="txtbox" runat="server" Width="300px" style="color:black;" AutoPostBack="True" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" >
+                <asp:DropDownList ID="DropDownSubCategory" CssClass="txtbox" runat="server" Width="300px" style="color:black;" AutoPostBack="True" OnSelectedIndexChanged="DropDownSubCategory_SelectedIndexChanged" >
                 </asp:DropDownList>
             </td>
         </tr>
@@ -54,13 +54,13 @@
                 <h5>Supplier</h5>   
             </td>
             <td style="text-align:left; padding-left:15px" class="auto-style1">
-                <asp:DropDownList ID="DropDownList1" CssClass="txtbox" runat="server" Width="300px" style="color:black;">
+                <asp:DropDownList ID="DropDownSupplier" CssClass="txtbox" runat="server" Width="300px" style="color:black;" OnSelectedIndexChanged="DropDownSupplier_SelectedIndexChanged" AutoPostBack="true">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td colspan="2" style="text-align:right">
-                <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
+                <asp:Button ID="Button1" runat="server" Text="Search" Enabled="false" OnClick="Button1_Click" />
             </td>
         </tr>
 

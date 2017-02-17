@@ -63,7 +63,7 @@
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <div style="text-align:center">
-                                    <asp:Button ID="ButtonEdit" runat="server" CommandName="Edit" Text="Edit" />
+                                    <asp:Button ID="ButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("SupId") %>' OnCommand="ButtonEdit_Command"/>
                                     <asp:Button ID="ButtonDelete" runat="server" CommandName="Delete"  Text="Delete"  />
                                 </div>
                             </ItemTemplate>
@@ -82,6 +82,7 @@
                 <div >
                 <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="lblmsg" runat="server"></asp:Label>
+                    <asp:TextBox ID="supplierTB" runat="server" Visible="false"></asp:TextBox>
                 </div>
             </td>
         </tr>

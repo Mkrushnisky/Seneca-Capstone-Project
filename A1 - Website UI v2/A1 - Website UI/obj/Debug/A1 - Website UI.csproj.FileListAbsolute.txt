@@ -28,4 +28,9 @@ C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.p
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\bin\MySql.Data.dll
-C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll.config
+C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll
+C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.pdb
+C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
+C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb

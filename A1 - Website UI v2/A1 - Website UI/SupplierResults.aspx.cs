@@ -20,14 +20,18 @@ namespace A1___Website_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            loadSuppliers();
+            if(!IsPostBack)
+            {
+                supplierTB.Text = Request.QueryString["supplier"];
+                loadSuppliers();
+            } 
         }
 
         protected void loadSuppliers()
         {
             var conn = new MySqlConnection(strcon);
             conn.Open();
-            string getdata = "SELECT * FROM Supplier";
+            string getdata = "SELECT * FROM Supplier WHERE SupId = '" + supplierTB.Text + "'";
             var cmd = new MySqlCommand(getdata, conn);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -56,6 +60,15 @@ namespace A1___Website_UI
         protected void SupplierGridView_RowEditing(object sender, GridViewEditEventArgs e)
         {
             //Response.Redirect("~/SupplierEdit.aspx?supplier='" + e.CommandArgument + "'");
+        }
+
+        protected void ButtonEdit_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "Edit")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect("~/SupplierEdit.aspx?supplier=" + rowIndex + "");
+            }
         }
 
         //protected void ButtonEdit_Click(object sender, EventArgs e)
