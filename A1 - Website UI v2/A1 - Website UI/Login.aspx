@@ -44,23 +44,25 @@
 		<form id="form1" runat="server">
 			<h1>Login Form</h1>
 			<div>
-                <asp:TextBox ID="UserEmail" placeholder="Username" runat="server" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
-                 ControlToValidate="UserEmail"
-                  Display="Dynamic" 
-                  ErrorMessage="Cannot be empty." 
-                  runat="server" />
+                <asp:TextBox ID="UserEmail" placeholder="Username" runat="server" /> 
+                
 				<!--<input type="text" placeholder="Username" required="" id="username" />-->
 			</div>
+            <asp:RequiredFieldValidator ForeColor="Red" ID="RequiredFieldValidator1" 
+                 ControlToValidate="UserEmail"
+                  ErrorMessage="Username cannot be empty." 
+                  runat="server" />
 			<div>
                 <asp:TextBox ID="UserPass" placeholder="Password" TextMode="Password" 
              runat="server" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
-            ControlToValidate="UserPass"
-            ErrorMessage="Cannot be empty." 
-            runat="server" />
+                
 				<!--<input type="password" placeholder="Password" required="" id="password" />-->
 			</div>
+
+            <asp:RequiredFieldValidator ForeColor="Red" ID="RequiredFieldValidator2" 
+            ControlToValidate="UserPass"
+            ErrorMessage="Password cannot be empty." 
+            runat="server" />
 			<div>
                  <asp:Button ID="Submit1" OnClick="validateUser" Text="Log On" 
        runat="server" CssClass="auto-style1" />
@@ -68,10 +70,8 @@
                  <asp:Label ID="Msg" ForeColor="red" runat="server" />
                     </p>
 				<!--<input type="button" onclick="check(this.form)" value="Login"/>-->
-                <p style="color:black">Remember me?
-                 <asp:CheckBox ID="Persist" runat="server" /></p>
 				<a href="#">Lost your password?</a>
-				<a href="#">Register</a>
+				<a href="Register.aspx">Register</a>
 			</div>
 		</form><!-- form -->
 	</section><!-- content -->

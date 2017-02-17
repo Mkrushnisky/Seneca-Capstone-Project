@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace A1___Website_UI
 {
@@ -19,11 +20,6 @@ namespace A1___Website_UI
         }
         protected void RegisterUser(object sender, EventArgs e)
         {
-
-        }
-
-        protected void validateUser(object sender, EventArgs e)
-        {
             var conn = new MySqlConnection(strcon);
             conn.Open();
 
@@ -32,7 +28,7 @@ namespace A1___Website_UI
                                     Active
                                     FROM Users
                                     WHERE Email ='" + UserEmail.Text +
-                                    "' AND Password = '" + UserPass.Text + "'";
+                                     "' AND Password = '" + UserPass.Text + "'";
 
             var cmd = new MySqlCommand(getUserPassword, conn);
 
@@ -40,11 +36,7 @@ namespace A1___Website_UI
             if (reader.Read())
             {
                 Boolean active = false;
-                if(reader.GetString(reader.GetOrdinal("Email")) == "admin@dg.com")
-                {
-                    active = true;
-                }
-                if(reader.GetString(reader.GetOrdinal("Active")) == "1")
+                if (reader.GetString(reader.GetOrdinal("Active")) == "1")
                 {
                     active = true;
                 }
@@ -52,13 +44,46 @@ namespace A1___Website_UI
 
 
 
-               
+                if (active)
+                {
+                    Msg.Text = "User already exists";
+                }
+                else
+                {
+                    Msg.Text = "User account not activated yet please contact your administrator";
+                }
+                conn.Close();
+
             }
             else
             {
-                Msg.Text = "Invalid credentials. Please try again.";
+                if(UserPass.Text == UserPass2.Text)
+                {
+                    string AddUsername = "INSERT INTO Users (UserId, Email, Password, Active) VALUES (NULL, '" + UserEmail.Text + "', '" + UserPass.Text + "',0)";
+                    var cmd2 = new MySqlCommand(AddUsername, conn);
+                    reader.Close();
+                    MySqlDataReader reader2 = cmd2.ExecuteReader();
+                    if (reader2.Read())
+                    {
+
+                    }
+                    conn.Close();
+                    MessageBox.Show("User account created, please wait for the administrator to activate your account");
+                    Response.Redirect("~/Login.aspx");
+                }
+                else
+                {
+                    Msg.Text = "Passwords don't match";
+                    conn.Close();
+                }
+                
             }
-            conn.Close();
+        }
+       
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

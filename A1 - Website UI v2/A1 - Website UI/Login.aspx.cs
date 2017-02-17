@@ -50,7 +50,7 @@ namespace A1___Website_UI
                 if (active)
                 {
                     FormsAuthentication.RedirectFromLoginPage
-                    (UserEmail.Text, Persist.Checked);
+                    (UserEmail.Text, false);
                 }
                 else
                 {
