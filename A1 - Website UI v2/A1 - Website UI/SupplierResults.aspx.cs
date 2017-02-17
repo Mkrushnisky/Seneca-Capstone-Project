@@ -50,16 +50,15 @@ namespace A1___Website_UI
                 int columncount = SupplierGridView.Rows[0].Cells.Count;
                 lblmsg.Text = " No data found !!!";
             }
+            conn.Close();
         }
 
         protected void SupplierGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
         }
 
         protected void SupplierGridView_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            //Response.Redirect("~/SupplierEdit.aspx?supplier='" + e.CommandArgument + "'");
         }
 
         protected void ButtonEdit_Command(object sender, CommandEventArgs e)
@@ -70,15 +69,62 @@ namespace A1___Website_UI
                 Response.Redirect("~/SupplierEdit.aspx?supplier=" + rowIndex + "");
             }
         }
+        //Delete Selected Record
+        protected void ButtonDelete_Command(object sender, CommandEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to perminantly delete this record?", "Delete Record?",
+                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (result == DialogResult.Yes)
+            {
+                if (e.CommandName == "Delete")
+                {
+                    //Get AddressId
+                    int rowIndex = Convert.ToInt32(e.CommandArgument);
+                    string addId = null;
+                    var conn = new MySqlConnection(strcon);
+                    conn.Open();
+                    string getdata = "SELECT * FROM Supplier WHERE SupId = '" + rowIndex + "'";
+                    var cmd = new MySqlCommand(getdata, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        addId = reader.GetString(reader.GetOrdinal("AddressId"));
+                    }
+                    conn.Close();
 
-        //protected void ButtonEdit_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("~/SupplierEdit.aspx");
-        //}
+                    //Delete record from Address Table
+                    conn.Open();
+                    string deleteAdddress = @"DELETE FROM Address WHERE Address.AddressId = '" + addId + "'";
+                    cmd = new MySqlCommand(deleteAdddress, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
 
-        //protected void SupplierGridView_RowCommand(object sender, GridViewCommandEventArgs e)
-        //{
+                    //Delete SubCategory relation records from SubCatSupplier Table
+                    conn.Open();
+                    string deleteSubCategory = @"DELETE FROM SubCatSupplier WHERE SubCatSupplier.SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(deleteSubCategory, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
 
-        //}
+                    //Delete record from Supplier
+                    conn.Open();
+                    string deleteSupplier = @"DELETE FROM Supplier WHERE SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(deleteSupplier, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
+                    Response.Redirect("~/SearchMenu.aspx");
+                }
+            }
+            
+        }
     }
 }
