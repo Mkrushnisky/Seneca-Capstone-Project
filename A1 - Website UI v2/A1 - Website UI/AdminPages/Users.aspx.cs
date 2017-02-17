@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace A1___Website_UI.AdminPages
 {
@@ -17,7 +18,7 @@ namespace A1___Website_UI.AdminPages
         {
             if (!IsPostBack)
             {
-                supplierTB.Text = Request.QueryString["supplier"];
+                //supplierTB.Text = Request.QueryString["Users"];
                 loadUsers();
             }
         }
@@ -44,6 +45,7 @@ namespace A1___Website_UI.AdminPages
                 int columncount = UserGridView.Rows[0].Cells.Count;
                 lblmsg.Text = " No data found !!!";
             }
+            conn.Close();
         }
 
         protected void ButtonEdit_Command(object sender, CommandEventArgs e)
@@ -52,6 +54,36 @@ namespace A1___Website_UI.AdminPages
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
                 Response.Redirect("~/AdminPages/UserEdit.aspx?User=" + rowIndex + "");
+            }
+        }
+
+        protected void ButtonDelete_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "DeleteUser")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                DialogResult result = MessageBox.Show("Are you sure you want to perminantly delete this record?", "Delete Record?",
+                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+
+                    //Response.Redirect("~/AdminPages/UserEdit.aspx?User=" + rowIndex + "");
+                    var conn = new MySqlConnection(strcon);
+                    conn.Open();
+
+                    string getUserPassword = @"DELETE
+                                    FROM Users
+                                    WHERE UserId =" + rowIndex;
+
+                    var cmd = new MySqlCommand(getUserPassword, conn);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+
+                    }
+                }
+                
             }
         }
     }

@@ -31,24 +31,24 @@
                     <Columns>
                         <asp:TemplateField HeaderText="User ID">
                             <ItemTemplate>
-                                <asp:Label ID="supidTB" runat="server" Text='<%#Eval("UserId") %>'/>
+                                <asp:Label ID="userId" runat="server" Text='<%#Eval("UserId") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Email">
                             <ItemTemplate>
-                                <asp:Label ID="supnameTB" runat="server" Text='<%#Eval("Email") %>'/>
+                                <asp:Label ID="emailTB" runat="server" Text='<%#Eval("Email") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Email">
                             <ItemTemplate>
-                                <asp:Label ID="supnameTB" runat="server" Text='<%#Eval("Active") %>'/>
+                                <asp:Label ID="ActiveTB" runat="server" Text='<%#Eval("Active") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
                        <asp:TemplateField>
                            <ItemTemplate>
                                 <div style="text-align:center">
                                     <asp:Button ID="ButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonEdit_Command"/>
-                                    <asp:Button ID="ButtonDelete" runat="server" CommandName="Delete"  Text="Delete"  />
+                                    <asp:Button ID="ButtonDelete" runat="server" CommandName="DeleteUser"  Text="Delete" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonDelete_Command" />
                                 </div>
                             </ItemTemplate>
                        </asp:TemplateField>
@@ -61,7 +61,7 @@
                 <div >
                 <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="lblmsg" runat="server"></asp:Label>
-                    <asp:TextBox ID="supplierTB" runat="server" Visible="false"></asp:TextBox>
+                    <asp:TextBox ID="UserTB" runat="server" Visible="false"></asp:TextBox>
                 </div>
             </td>
         </tr>
