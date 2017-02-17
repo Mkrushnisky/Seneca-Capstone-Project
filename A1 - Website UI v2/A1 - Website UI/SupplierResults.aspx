@@ -64,7 +64,7 @@
                             <ItemTemplate>
                                 <div style="text-align:center">
                                     <asp:Button ID="ButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("SupId") %>' OnCommand="ButtonEdit_Command"/>
-                                    <asp:Button ID="ButtonDelete" runat="server" CommandName="Delete"  Text="Delete"  />
+                                    <asp:Button ID="ButtonDelete" runat="server" CommandName="Delete" Text="Delete" CommandArgument='<%#Eval("SupId") %>' OnCommand="ButtonDelete_Command" />
                                 </div>
                             </ItemTemplate>
                             <FooterTemplate>
