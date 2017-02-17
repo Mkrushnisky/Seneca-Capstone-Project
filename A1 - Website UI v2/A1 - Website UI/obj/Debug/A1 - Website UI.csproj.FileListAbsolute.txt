@@ -28,9 +28,12 @@ C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.p
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
 C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\bin\MySql.Data.dll
-C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll.config
-C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.dll
-C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\bin\A1 - Website UI.pdb
-C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
-C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.dll
-C:\Users\Pat\Desktop\Michael's version\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
+C:\Users\Medievals\Desktop\A1 - Website UI\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+D:\team 22 repo\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.dll.config
+D:\team 22 repo\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.dll
+D:\team 22 repo\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.pdb
+D:\team 22 repo\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\MySql.Data.dll
+D:\team 22 repo\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\MySql.Data.xml
+D:\team 22 repo\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+D:\team 22 repo\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.dll
+D:\team 22 repo\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.pdb

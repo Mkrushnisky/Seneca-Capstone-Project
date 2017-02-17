@@ -10,13 +10,18 @@ using System.Web.UI.WebControls;
 
 namespace A1___Website_UI
 {
-    public partial class Login1 : System.Web.UI.Page
+    public partial class Register : System.Web.UI.Page
     {
         private String strcon = ConfigurationManager.ConnectionStrings["btsdatabaseConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+        protected void RegisterUser(object sender, EventArgs e)
+        {
+
+        }
+
         protected void validateUser(object sender, EventArgs e)
         {
             var conn = new MySqlConnection(strcon);
@@ -47,15 +52,7 @@ namespace A1___Website_UI
 
 
 
-                if (active)
-                {
-                    FormsAuthentication.RedirectFromLoginPage
-                    (UserEmail.Text, Persist.Checked);
-                }
-                else
-                {
-                    Msg.Text = "User account not activated yet please contact your administrator";
-                }
+               
             }
             else
             {
