@@ -42,42 +42,49 @@
     <div class="container">
 	<section id="content">
 		<form id="form1" runat="server">
-			<h1>Login Form</h1>
+			<h1>Register</h1>
+            
 			<div>
                 <asp:TextBox ID="UserEmail" placeholder="Username" runat="server" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
-                 ControlToValidate="UserEmail"
-                  Display="Dynamic" 
-                  ErrorMessage="Cannot be empty." 
-                  runat="server" />
+                
 				<!--<input type="text" placeholder="Username" required="" id="username" />-->
 			</div>
+            <asp:RequiredFieldValidator ForeColor="Red" ID="RequiredFieldValidator1" 
+                 ControlToValidate="UserEmail"
+                  
+                  ErrorMessage="Email cannot be empty." 
+                  runat="server" />
 			<div>
                 <asp:TextBox ID="UserPass" placeholder="Password" TextMode="Password" 
              runat="server" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
-            ControlToValidate="UserPass"
-            ErrorMessage="Cannot be empty." 
-            runat="server" />
+                
 				<!--<input type="password" placeholder="Password" required="" id="password" />-->
 			</div>
+        <asp:RequiredFieldValidator ForeColor="Red" ID="RequiredFieldValidator2" 
+            ControlToValidate="UserPass"
+            ErrorMessage="Password cannot be empty." 
+            runat="server" />
             <div>
                 <asp:TextBox ID="UserPass2" placeholder="Confirm Password" TextMode="Password" 
              runat="server" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" 
-            ControlToValidate="UserPass2"
-            ErrorMessage="Cannot be empty." 
-            runat="server" />
+                
 				<!--<input type="password" placeholder="Password" required="" id="password" />-->
 			</div>
+            <asp:RequiredFieldValidator ForeColor="Red" ID="RequiredFieldValidator3" 
+            ControlToValidate="UserPass2"
+            ErrorMessage="Confirmation password cannot be empty." 
+            runat="server" />
 			<div>
-                 <asp:Button ID="Submit1" OnClick="registerUser" Text="Register" 
+                 <asp:Button ID="Submit1" OnClick="RegisterUser" Text="Register" 
        runat="server" CssClass="auto-style1" />
+                <asp:Button ID="Cancel" OnClick="Cancel_Click" Text="Cancel" 
+       runat="server" CssClass="auto-style1" CausesValidation="false" />
                 <p>
                  <asp:Label ID="Msg" ForeColor="red" runat="server" />
                     </p>
 				<!--<input type="button" onclick="check(this.form)" value="Login"/>-->
 			</div>
+            
 		</form><!-- form -->
 	</section><!-- content -->
 </div><!-- container -->

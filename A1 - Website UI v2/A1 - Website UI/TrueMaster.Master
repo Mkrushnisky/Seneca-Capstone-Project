@@ -13,19 +13,19 @@
 </script>
 
 <head>
-    <link href="Content/Sidebar.css" rel="stylesheet" />
-    <link href="Content/menu.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="Content/bootstrap.css">
+    <link href="/Content/Sidebar.css" rel="stylesheet" />
+    <link href="/Content/menu.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/Content/bootstrap.css">
     <!-- Bootstrap -->
-    <link href="content/bootstrap.css" rel="stylesheet" />
-    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="/content/bootstrap.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.min.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="Scripts/jquery-1.9.0.min.js"></script>
+    <script src="/Scripts/jquery-1.9.0.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
 
-    <script src="Scripts/Dashboard.js"></script>
-    <link href="Content/Dashboard.css" rel="stylesheet" />
+    <script src="/Scripts/Dashboard.js"></script>
+    <link href="/Content/Dashboard.css" rel="stylesheet" />
 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
