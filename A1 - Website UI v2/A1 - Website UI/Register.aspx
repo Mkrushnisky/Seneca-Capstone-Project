@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#"  AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="A1___Website_UI.Login1" %>
+﻿<%@ Page Title="" Language="C#"  AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="A1___Website_UI.Register" %>
 <%@ Import Namespace="System.Web.Security" %>
 <!DOCTYPE html>
 
@@ -61,17 +61,22 @@
             runat="server" />
 				<!--<input type="password" placeholder="Password" required="" id="password" />-->
 			</div>
+            <div>
+                <asp:TextBox ID="UserPass2" placeholder="Confirm Password" TextMode="Password" 
+             runat="server" />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" 
+            ControlToValidate="UserPass2"
+            ErrorMessage="Cannot be empty." 
+            runat="server" />
+				<!--<input type="password" placeholder="Password" required="" id="password" />-->
+			</div>
 			<div>
-                 <asp:Button ID="Submit1" OnClick="validateUser" Text="Log On" 
+                 <asp:Button ID="Submit1" OnClick="registerUser" Text="Register" 
        runat="server" CssClass="auto-style1" />
                 <p>
                  <asp:Label ID="Msg" ForeColor="red" runat="server" />
                     </p>
 				<!--<input type="button" onclick="check(this.form)" value="Login"/>-->
-                <p style="color:black">Remember me?
-                 <asp:CheckBox ID="Persist" runat="server" /></p>
-				<a href="#">Lost your password?</a>
-				<a href="#">Register</a>
 			</div>
 		</form><!-- form -->
 	</section><!-- content -->
