@@ -68,7 +68,10 @@ namespace A1___Website_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /*if (WebSecurity.CurrentUserId != "admin.dg.com")
+            {
+                adminPagesID.Visible = false;
+            }*/
         }
        
 
