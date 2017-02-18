@@ -129,7 +129,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="SearchMenu.aspx" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> Search <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <a href="/SearchMenu.aspx" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> Search <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-1" class="collapse">
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Category</a></li>
@@ -138,7 +138,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a onclick="validateUser" href="SupplierAdd.aspx" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  Add <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <a onclick="validateUser" href="/SupplierAdd.aspx" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  Add <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-2" class="collapse">
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Category</a></li>
