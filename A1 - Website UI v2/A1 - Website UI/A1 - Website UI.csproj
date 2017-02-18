@@ -79,7 +79,6 @@
     <Content Include="Image\add-button-md.png" />
     <Content Include="Image\nexkk371.bmp" />
     <Content Include="Register.aspx" />
-    <Content Include="Login old.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -132,13 +131,6 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login old.aspx.cs">
-      <DependentUpon>Login old.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login old.aspx.designer.cs">
-      <DependentUpon>Login old.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

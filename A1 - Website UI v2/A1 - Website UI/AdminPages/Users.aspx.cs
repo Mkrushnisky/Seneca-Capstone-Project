@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -18,7 +19,23 @@ namespace A1___Website_UI.AdminPages
         {
             if (!IsPostBack)
             {
-                //supplierTB.Text = Request.QueryString["Users"];
+                /*if(HttpContext.Current.User.Identity.Name != "admin.dg.com")
+                {
+                    if(HttpContext.Current.User.Identity.Name == "")
+                    {
+                        Response.Redirect("/login.aspx");
+                    }
+                    if(Request.UrlReferrer == null)
+                    {
+                        Response.Redirect("/default.aspx");
+                    }
+                    else
+                    {
+                        
+                        Response.Redirect(Request.UrlReferrer.AbsoluteUri);
+                    }
+                }*/
+                UserTB.Text = Request.QueryString["User"];
                 loadUsers();
             }
         }
@@ -82,6 +99,7 @@ namespace A1___Website_UI.AdminPages
                     {
 
                     }
+                    Response.Redirect("~/AdminPages/Users.aspx");
                 }
                 
             }
