@@ -62,7 +62,7 @@ namespace A1___Website_UI
             }
         }
 
-        //Database connection for Province/State information to bind it to the ProvinceState Dropdownlist
+        //Database connection for Province/State information to bind it to the ProvinceState Dropdownlist in add Supplier
         protected void Province(object sender, EventArgs e)
         {
             string country = null;
@@ -95,6 +95,47 @@ namespace A1___Website_UI
                             else if (country == "US")
                             {
                                 ProvinceDDL.Items.Insert(0, new ListItem("State", "NA"));
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        //Database connection for Province/State information to bind it to the ProvinceState Dropdownlist in Add Contact
+        protected void CProvince(object sender, EventArgs e)
+        {
+            string country = null;
+            if (CCountryDDL.SelectedItem.Text == "Canada")
+            {
+                country = "C";
+            }
+            else if (CCountryDDL.SelectedItem.Text == "United States")
+            {
+                country = "US";
+            }
+            using (var conn = new MySqlConnection(strcon))
+            {
+                conn.Open();
+                string Query = "SELECT * FROM ProvinceState WHERE SCountry = '" + country + "'";
+                using (var cmd = new MySqlCommand(Query, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            CProvinceDDL.DataSource = reader;
+                            CProvinceDDL.DataValueField = "StateName";
+                            CProvinceDDL.DataTextField = "StateName";
+                            CProvinceDDL.DataBind();
+                            if (country == "C")
+                            {
+                                CProvinceDDL.Items.Insert(0, new ListItem("Province", "NA"));
+                            }
+                            else if (country == "US")
+                            {
+                                CProvinceDDL.Items.Insert(0, new ListItem("State", "NA"));
                             }
 
                         }
@@ -188,19 +229,20 @@ namespace A1___Website_UI
             string getId = "SELECT SupId FROM Supplier ORDER BY SupId DESC LIMIT 1";
             cmd = new MySqlCommand(getId, conn);
             reader = cmd.ExecuteReader();
-            while (reader.Read()){
+            while (reader.Read())
+            {
                 GetSupNum.Text = reader.GetString(0);
             }
             conn.Close();
-            
+
             //Adds Sub-Categories to Supplier
-            
+
             for (int i = 0; i < ToAddListBox.Items.Count; i++)
             {
                 if (ToAddListBox.Items[i].Selected == true || ToAddListBox.Items.Count > 0)
                 {
                     conn.Open();
-                    string AddSubCategory = "INSERT INTO SubCatSupplier (SCSId, SubCatId, SupId) VALUES (NULL, '" + ToAddListBox.Items[i].Value + "', '" + GetSupNum.Text +"')";
+                    string AddSubCategory = "INSERT INTO SubCatSupplier (SCSId, SubCatId, SupId) VALUES (NULL, '" + ToAddListBox.Items[i].Value + "', '" + GetSupNum.Text + "')";
                     cmd = new MySqlCommand(AddSubCategory, conn);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -209,7 +251,39 @@ namespace A1___Website_UI
                     conn.Close();
                 }
             }
-            MessageBox.Show("Save Data");
+
+            //Add Contact Address
+            conn.Open();
+            string AddCAddress = "INSERT INTO Address (AddressId, Street, City, Province, PostalCode, Country) VALUES ( NULL, '" + CStreetTB.Text + "', '" + CCityTB.Text + "', '" + CProvinceDDL.SelectedItem + "', '" + CPostalCodeTB.Text + "', '" + CCountryDDL.SelectedItem.Text + "')";
+            cmd = new MySqlCommand(AddCAddress, conn);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+            }
+            conn.Close();
+
+            //Get Address Id to put into Contact
+            conn.Open();
+            string getCAId = "SELECT AddressId FROM Address ORDER BY AddressId DESC LIMIT 1";
+            cmd = new MySqlCommand(getCAId, conn);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Addressid.Text = reader.GetString(0);
+            }
+            conn.Close();
+
+            //Add Contact
+            conn.Open();
+            string AddContact = "INSERT INTO Contact (ContactId, SupId, FName, LName, AddressId, Email, Work, Main, Cell) VALUES ( NULL, '" + GetSupNum.Text + "', '" + FNameTB.Text + "', '" + LNameTB.Text + "', '" + Addressid.Text + "', '" + CEmailTB.Text + "', '" + WorkTB.Text + "', '1', '" + CellTB.Text + "')";
+            cmd = new MySqlCommand(AddContact, conn);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+            }
+            conn.Close();
+
+            MessageBox.Show("Data Saved");
             Response.Redirect("~/SearchMenu.aspx");
         }
 
@@ -225,7 +299,7 @@ namespace A1___Website_UI
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            if(SubCategoryListBox.SelectedItem != null)
+            if (SubCategoryListBox.SelectedItem != null)
             {
                 ToAddListBox.Items.Add(SubCategoryListBox.SelectedItem);
             }
@@ -242,6 +316,20 @@ namespace A1___Website_UI
             {
                 ProvinceDDL.Enabled = false;
                 ProvinceDDL.Items.Clear();
+            }
+        }
+
+        protected void CCountryDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CCountryDDL.SelectedItem.Text == "Canada" || CCountryDDL.SelectedItem.Text == "United States")
+            {
+                CProvince(sender, e);
+                CProvinceDDL.Enabled = true;
+            }
+            else
+            {
+                CProvinceDDL.Enabled = false;
+                CProvinceDDL.Items.Clear();
             }
         }
     }

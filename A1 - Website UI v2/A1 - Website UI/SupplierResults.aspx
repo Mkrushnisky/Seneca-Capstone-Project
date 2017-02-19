@@ -47,24 +47,34 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Contact Name">
                             <ItemTemplate>
-                                <asp:Label ID="contactTB" runat="server" Text="John Smith"/>
+                                <asp:Label ID="contactTB" runat="server" Text='<%#Eval("FName") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Phone Number">
                             <ItemTemplate>
-                                <asp:Label ID="phoneTB" runat="server" Text="123-456-7890"/>
+                                <asp:Label ID="phoneTB" runat="server" Text='<%#Eval("LName") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Email">
                             <ItemTemplate>
-                                <asp:Label ID="emailTB" runat="server" Text="Example@somewhere.com"/>
+                                <asp:Label ID="emailTB" runat="server" Text='<%#Eval("Email") %>'/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Work Number">
+                            <ItemTemplate>
+                                <asp:Label ID="workTB" runat="server" Text='<%#Eval("Work") %>'/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Cell Number">
+                            <ItemTemplate>
+                                <asp:Label ID="cellTB" runat="server" Text='<%#Eval("Cell") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <div style="text-align:center">
                                     <asp:Button ID="ButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("SupId") %>' OnCommand="ButtonEdit_Command"/>
-                                    <asp:Button ID="ButtonDelete" runat="server" CommandName="Delete" Text="Delete" CommandArgument='<%#Eval("SupId") %>' OnCommand="ButtonDelete_Command" />
+                                    <asp:Button ID="ButtonDelete" runat="server" CommandName="Delete"  Text="Delete" OnCommand="ButtonDelete_Command" CommandArgument='<%#Eval("SupId") %>' />
                                 </div>
                             </ItemTemplate>
                             <FooterTemplate>
@@ -83,6 +93,7 @@
                 <br />&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="lblmsg" runat="server"></asp:Label>
                     <asp:TextBox ID="supplierTB" runat="server" Visible="false"></asp:TextBox>
+                    <asp:ListBox ID="addLB" runat="server" Visible="false"></asp:ListBox>
                 </div>
             </td>
         </tr>

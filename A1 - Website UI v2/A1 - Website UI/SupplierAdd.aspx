@@ -165,7 +165,99 @@
                         &nbsp;</td>
         <td class="auto-style7"></td>
     </tr>
-    <tr style="height:35px">
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <h3>Add Main Contact</h3>
+        </th>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr style="height:50px">
+                    <td>
+                        <h5>Name: </h5>
+                    </td>
+                    <td style="color:black">
+                        <asp:TextBox ID="FNameTB" runat="server" placeholder="First Name"></asp:TextBox>
+                    </td>
+                    <td style="color:black">
+                        <asp:TextBox ID="LNameTB" runat="server" placeholder="Last Name"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr style="height:50px">
+                    <td>
+                        <h5>Address: </h5>
+                    </td>
+                    <td colspan="2" style="color:black">
+                        <asp:TextBox ID="CStreetTB" CssClass="txtbox" runat="server" Width="273px" placeholder="Street Address"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr style="height:50px">
+                    <td></td>
+                    <td colspan="2" style="color:black">
+                        <asp:TextBox CssClass="txtbox" ID="CCityTB" runat="server" placeholder="City" Width="115px"></asp:TextBox>
+                        <asp:DropDownList ID="CCountryDDL" runat="server" CssClass="txtbox" OnSelectedIndexChanged="CCountryDDL_SelectedIndexChanged" AutoPostBack="True">
+                            <asp:ListItem Value="0" Text="--- Choose Country ---"></asp:ListItem>
+                            <asp:ListItem Value ="1">Canada</asp:ListItem>
+                            <asp:ListItem Value="2">United States</asp:ListItem>
+                            <asp:ListItem>Mexico</asp:ListItem>
+                            <asp:ListItem>China</asp:ListItem>
+                            <asp:ListItem>Japan</asp:ListItem>
+                            <asp:ListItem>Germany</asp:ListItem>
+                            <asp:ListItem>Russia</asp:ListItem>
+                            <asp:ListItem>UK</asp:ListItem>
+                            <asp:ListItem>France</asp:ListItem>
+                            <asp:ListItem>Italy</asp:ListItem>
+                            <asp:ListItem>Egypt</asp:ListItem>
+                            <asp:ListItem>Barzil</asp:ListItem>
+                            <asp:ListItem>Chile</asp:ListItem>
+                            <asp:ListItem>Finland</asp:ListItem>
+                            <asp:ListItem>Greece</asp:ListItem>
+                            <asp:ListItem>Iceland</asp:ListItem>
+                            <asp:ListItem>Korea, South</asp:ListItem>
+                            <asp:ListItem>Netherlands</asp:ListItem>
+                            <asp:ListItem>Philippines</asp:ListItem>
+                            <asp:ListItem>Romania</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr style="height:50px">
+                    <td></td>
+                    <td colspan="2" style="color:black">
+                        <asp:DropDownList ID="CProvinceDDL" CssClass="txtbox" runat="server" Enabled="false" Width="115px"></asp:DropDownList>
+                        <asp:TextBox ID="CPostalCodeTB" CssClass="txtbox" runat="server" placeholder="Postal Code" Width="115px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr style="height:50px">
+                    <td>
+                        <h5>Email: </h5>
+                    </td>
+                    <td colspan="2" style="color:black">
+                        <asp:TextBox ID="CEmailTB" runat="server" placeholder="example@somewhere.com" Width="273px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr style="height:50px">
+                    <td><h5>Work: </h5></td>
+                    <td style="color:black">
+                        <asp:TextBox ID="WorkTB" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr style="height:50px" style="color:black">
+                    <td><h5>Cell: </h5></td>
+                    <td style="color:black">
+                        <asp:TextBox ID="CellTB" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="height:35px" >
         <td class="auto-style8">&nbsp;</td>
         <td style="text-align: right"" class="auto-style9">
             <asp:Button ID="Button1" runat="server" Text="Save" Width="62px" OnClick="Button1_Click"  />

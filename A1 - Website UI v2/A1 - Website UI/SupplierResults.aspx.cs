@@ -20,18 +20,18 @@ namespace A1___Website_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 supplierTB.Text = Request.QueryString["supplier"];
                 loadSuppliers();
-            } 
+            }
         }
 
         protected void loadSuppliers()
         {
             var conn = new MySqlConnection(strcon);
             conn.Open();
-            string getdata = "SELECT * FROM Supplier WHERE SupId = '" + supplierTB.Text + "'";
+            string getdata = "SELECT * FROM Supplier INNER JOIN Contact ON Supplier.SupId = Contact.SupId WHERE Supplier.SupId = '" + supplierTB.Text + "' AND Main = '1'";
             var cmd = new MySqlCommand(getdata, conn);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -50,11 +50,11 @@ namespace A1___Website_UI
                 int columncount = SupplierGridView.Rows[0].Cells.Count;
                 lblmsg.Text = " No data found !!!";
             }
-            conn.Close();
         }
 
         protected void SupplierGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+
         }
 
         protected void SupplierGridView_RowEditing(object sender, GridViewEditEventArgs e)
@@ -69,62 +69,78 @@ namespace A1___Website_UI
                 Response.Redirect("~/SupplierEdit.aspx?supplier=" + rowIndex + "");
             }
         }
-        //Delete Selected Record
+
         protected void ButtonDelete_Command(object sender, CommandEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to perminantly delete this record?", "Delete Record?",
-                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (result == DialogResult.Yes)
+            if (e.CommandName == "Delete")
             {
-                if (e.CommandName == "Delete")
+                DialogResult result = MessageBox.Show("Are you sure you want to Delete this Record?", "Delete Record?",
+                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
                 {
-                    //Get AddressId
                     int rowIndex = Convert.ToInt32(e.CommandArgument);
-                    string addId = null;
                     var conn = new MySqlConnection(strcon);
+                    string deleteSubCats = "DELETE FROM SubCatSupplier WHERE SupId = '" + rowIndex + "'";
                     conn.Open();
-                    string getdata = "SELECT * FROM Supplier WHERE SupId = '" + rowIndex + "'";
-                    var cmd = new MySqlCommand(getdata, conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
+                    var cmd = new MySqlCommand(deleteSubCats, conn);
+                    var reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        addId = reader.GetString(reader.GetOrdinal("AddressId"));
                     }
                     conn.Close();
 
-                    //Delete record from Address Table
                     conn.Open();
-                    string deleteAdddress = @"DELETE FROM Address WHERE Address.AddressId = '" + addId + "'";
-                    cmd = new MySqlCommand(deleteAdddress, conn);
+                    string deleteAddress = "DELETE FROM Address WHERE AddressId = (SELECT AddressId FROM Supplier WHERE SupId = '" + rowIndex + "')";
+                    cmd = new MySqlCommand(deleteAddress, conn);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                     }
                     conn.Close();
 
-                    //Delete SubCategory relation records from SubCatSupplier Table
                     conn.Open();
-                    string deleteSubCategory = @"DELETE FROM SubCatSupplier WHERE SubCatSupplier.SupId = '" + rowIndex + "'";
-                    cmd = new MySqlCommand(deleteSubCategory, conn);
+                    string selectContact = "SELECT AddressId FROM Contact WHERE SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(selectContact, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        addLB.Items.Add(reader.GetString(reader.GetOrdinal("AddressId")));
+                    }
+                    conn.Close();
+
+                    for (int i = 0; i < addLB.Items.Count; i++)
+                    {
+                        conn.Open();
+                        string deleteContactAddress = "DELETE FROM Address WHERE AddressID ='" + addLB.Items[i] + "'";
+                        cmd = new MySqlCommand(deleteContactAddress, conn);
+                        reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                        }
+                        conn.Close();
+                    }
+
+
+                    conn.Open();
+                    string deleteContact = "DELETE FROM Contact WHERE SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(deleteContact, conn);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                     }
                     conn.Close();
 
-                    //Delete record from Supplier
                     conn.Open();
-                    string deleteSupplier = @"DELETE FROM Supplier WHERE SupId = '" + rowIndex + "'";
+                    string deleteSupplier = "DELETE FROM Supplier WHERE SupId = '" + rowIndex + "'";
                     cmd = new MySqlCommand(deleteSupplier, conn);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                     }
                     conn.Close();
-                    Response.Redirect("~/SearchMenu.aspx");
+                    loadSuppliers();
                 }
             }
-            
         }
     }
 }
