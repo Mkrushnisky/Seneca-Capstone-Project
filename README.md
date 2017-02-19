@@ -11,6 +11,11 @@ No changes so far
 ## Already done
 
 * Created UI for Supplier Use Case
+* Created Database and Database Connection
+* Added Functionality to Add, Edit and Delete Supplier
+* Added Functionality to Search Supplier
+* Added Database Functionality for Login
+* Restricted Access for User Activation to Adminitrator
 
 ## To-do
 
