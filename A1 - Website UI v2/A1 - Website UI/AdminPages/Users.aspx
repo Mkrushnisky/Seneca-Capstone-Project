@@ -39,7 +39,7 @@
                                 <asp:Label ID="emailTB" runat="server" Text='<%#Eval("Email") %>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Email">
+                        <asp:TemplateField HeaderText="Active">
                             <ItemTemplate>
                                 <asp:Label ID="ActiveTB" runat="server" Text='<%#Eval("Active") %>'/>
                             </ItemTemplate>
