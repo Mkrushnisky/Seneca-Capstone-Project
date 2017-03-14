@@ -32,11 +32,11 @@
                 <asp:CheckBox ID="CheckBox1" runat="server" Font-Size="Large" OnCheckedChanged="CheckBox1_CheckedChanged" Checked="false" AutoPostBack="true"/>
                 <label for="CheckBox1" style="font-size: 17px;">Distributor?</label>
 
-                <asp:DropDownList ID="DropDownList1" cssclass="form-control" runat="server" Visible="False" EnableTheming="True" Width="176px">
+                <asp:DropDownList ID="DropDownList1" cssclass="form-control" runat="server" Visible="False" EnableTheming="True">
                 </asp:DropDownList>
                 <div class="form-group">
-                    <label for="TextBox1" class="col-sm-10 control-label" style="font-size: 17px;">Supplier Name</label>
-                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
+                    <label for="TextBox1" class="col-sm-10 control-label" style="font-size: 17px;">Name</label>
+                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Supplier/Distributor Name"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="StreetTB" class="col-sm-10 control-label" style="font-size: 17px;">Supplier Name</label>
