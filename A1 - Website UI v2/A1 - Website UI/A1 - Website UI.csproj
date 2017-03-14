@@ -65,6 +65,7 @@
   <ItemGroup>
     <Content Include="AdminPages\UserEdit.aspx" />
     <Content Include="AdminPages\Users.aspx" />
+    <Content Include="CategoryAdd.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="AdminPages\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryAdd.aspx.cs">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryAdd.aspx.designer.cs">
+      <DependentUpon>CategoryAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
