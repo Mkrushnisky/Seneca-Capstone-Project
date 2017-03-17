@@ -110,7 +110,8 @@
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
-            <li><a href="#" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Stats"><i class="fa fa-bar-chart-o"></i>
+            <li><a href="#" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Stats">
+                
                 </a>
                 
             </li>      
@@ -181,6 +182,7 @@
         <!-- /.container-fluid -->
     </div>
     <!-- /#page-wrapper -->
+         <asp:Button class="fa fa-bar-chart-o" ID="LogOff" runat="server" Text="Log Off" OnClick="LogOff_Click" />
     </form>
 </div><!-- /#wrapper -->
     
