@@ -45,3 +45,9 @@ C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\M
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.dll
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
+C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.dll.config
+C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.dll
+C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.pdb
+C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.dll
+C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
