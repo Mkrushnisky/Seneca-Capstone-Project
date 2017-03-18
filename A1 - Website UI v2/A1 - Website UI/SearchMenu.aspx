@@ -12,32 +12,37 @@
                 Search Page
             </h3>
         </div>
-        <div class="row">
-            <div class="col-md-4 text-center" style="padding-bottom: 5px;">
-                <label for="DropDownCategory" class="control-label" style="font-size: 17px; text-align: center;">Category</label>
-                <asp:DropDownList ID="DropDownCategory" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownCategory_SelectedIndexChanged">    
-                </asp:DropDownList>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6 text-center" style="padding-bottom: 5px;">
+                    <label for="DropDownCategory" class="control-label" style="font-size: 17px; text-align: center;">Category</label>
+                    <asp:DropDownList ID="DropDownCategory" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownCategory_SelectedIndexChanged">    
+                    </asp:DropDownList>
+                </div>
+                <div class="col-md-6 text-center" style="padding-bottom: 5px;">
+                    <label for="DropDownSubCategory" class="control-label" style="font-size: 17px; text-align: center;">Sub-Category</label>
+                    <asp:DropDownList ID="DropDownSubCategory" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownSubCategory_SelectedIndexChanged">    
+                    </asp:DropDownList>
+                </div>
+            
             </div>
-            <div class="col-md-4 text-center" style="padding-bottom: 5px;">
-                <label for="DropDownSubCategory" class="control-label" style="font-size: 17px; text-align: center;">Sub-Category</label>
-                <asp:DropDownList ID="DropDownSubCategory" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownSubCategory_SelectedIndexChanged">    
-                </asp:DropDownList>
+        
+            <div class="row">
+                <div class="col-md-6 text-center" style="padding-bottom: 5px;">
+                    <label for="DropDownSupplier" class="control-label" style="font-size: 17px; text-align: center;">Supplier</label>
+                    <asp:DropDownList ID="DropDownSupplier" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownSupplier_SelectedIndexChanged">    
+                    </asp:DropDownList>
+                </div>
+                <div class="col-md-6 text-center" style="padding-bottom: 5px;">
+                    <label for="DropDownDistributor" class="control-label" style="font-size: 17px; text-align: center;">Distributor</label>
+                    <asp:DropDownList ID="DropDownDistributor" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownDistributor_SelectedIndexChanged">    
+                    </asp:DropDownList>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 text-center" style="padding-bottom: 5px;">
-                <label for="DropDownSupplier" class="control-label" style="font-size: 17px; text-align: center;">Supplier</label>
-                <asp:DropDownList ID="DropDownSupplier" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownSupplier_SelectedIndexChanged">    
-                </asp:DropDownList>
-            </div>
-            <div class="col-md-4 text-center" style="padding-bottom: 5px;">
-                <label for="DropDownDistributor" class="control-label" style="font-size: 17px; text-align: center;">Distributor</label>
-                <asp:DropDownList ID="DropDownDistributor" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownDistributor_SelectedIndexChanged">    
-                </asp:DropDownList>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 text-center" style="padding-bottom: 30px;">
+        
+        <div class="jumbotron col-md-4" style="border:3px solid #ffffff">
+            <div class=" text-center" style="padding-bottom: 5px;">
                 <label for="DropDownContactName" class="control-label" style="font-size: 17px; text-align: center;">Contact - Name</label>
                 <asp:DropDownList ID="DropDownContactName" CssClass="form-control input-sm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownContactName_SelectedIndexChanged">    
                 </asp:DropDownList>
