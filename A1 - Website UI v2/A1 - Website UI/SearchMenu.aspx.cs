@@ -268,7 +268,7 @@ namespace A1___Website_UI
                 {
                     if(DropDownSubCategory.SelectedIndex != 0 && DropDownSupplier.SelectedIndex != 0)
                     {
-                        Query = "SELECT DISTINCT Distributor.* FROM Distributor INNER JOIN SubCatSupplier ON Distributor.DisId = SubCatSupplier.SupId INNER JOIN SubCategory ON SubCatSupplier.SubCatId = SubCategory.SubCatId INNER JOIN Category ON SubCategory.CatId = Category.CatIdINNER JOIN Supplier ON Distributor.SupId = Supplier.SupId   WHERE SubCatSupplier.SubCatId = '" + DropDownSubCategory.SelectedValue + "'AND Supplier.SupId = '" + DropDownSupplier.SelectedValue + "'"; 
+                        Query = "SELECT DISTINCT Distributor.* FROM Distributor INNER JOIN SubCatSupplier ON Distributor.DisId = SubCatSupplier.SupId INNER JOIN SubCategory ON SubCatSupplier.SubCatId = SubCategory.SubCatId INNER JOIN Category ON SubCategory.CatId = Category.CatId INNER JOIN Supplier ON Distributor.SupId = Supplier.SupId   WHERE SubCatSupplier.SubCatId = '" + DropDownSubCategory.SelectedValue + "'AND Supplier.SupId = '" + DropDownSupplier.SelectedValue + "'"; 
                     }
                     else if (DropDownSubCategory.SelectedIndex !=0 && DropDownSupplier.SelectedIndex == 0)
                     {
