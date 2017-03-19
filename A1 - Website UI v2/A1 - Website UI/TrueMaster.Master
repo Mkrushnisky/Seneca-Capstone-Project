@@ -178,7 +178,7 @@
         <!-- /.container-fluid -->
     </div>
     <!-- /#page-wrapper -->
-         <asp:Button class="fa fa-bar-chart-o" ID="LogOff" runat="server" Text="Log Off" OnClick="LogOff_Click" />
+         <asp:Button  class="fa fa-bar-chart-o" ID="LogOff" runat="server" Text="Log Off" OnClick="LogOff_Click" />
         <!--  <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>-->
     </form>
 </div><!-- /#wrapper -->
