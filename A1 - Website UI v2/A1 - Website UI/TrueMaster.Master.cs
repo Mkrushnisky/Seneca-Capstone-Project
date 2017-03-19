@@ -73,7 +73,11 @@ namespace A1___Website_UI
                 adminPagesID.Visible = false;
             }*/
         }
-       
 
+        protected void LogOff_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
+        }
     }
 }
