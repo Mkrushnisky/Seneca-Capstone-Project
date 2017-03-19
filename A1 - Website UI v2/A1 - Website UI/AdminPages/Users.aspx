@@ -3,6 +3,50 @@
  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
+    <div class="container-fluid">
+        <div class="row text-center" style="padding-bottom: 10px;">
+            <h3 class="site-title">
+                Users
+            </h3>
+        </div>
+        <div class="row">
+            <asp:GridView ID="UserGridView" DataKeyNames="UserId" runat="server" AlternatingRowStyle-BackColor="#556591"
+                AutoGenerateColumns="false" ShowFooter="true" HeaderStyle-Font-Bold="true" Width="799px">
+                <Columns>
+                    <asp:TemplateField HeaderText="User ID">
+                        <ItemTemplate>
+                            <asp:Label ID="userId" runat="server" Text='<%#Eval("UserId") %>'/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Email">
+                        <ItemTemplate>
+                            <asp:Label ID="emailTB" runat="server" Text='<%#Eval("Email") %>'/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Active">
+                        <ItemTemplate>
+                            <asp:Label ID="ActiveTB" runat="server" Text='<%#Eval("Active") %>'/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <div style="text-align:center">
+                                <asp:Button ID="ButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonEdit_Command"/>
+                                <asp:Button ID="ButtonDelete" runat="server" CommandName="DeleteUser"  Text="Delete" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonDelete_Command" />
+                            </div>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
+    </div>
+
+
+
+
+
+
+
     <table>
         <tr>
             <td colspan="3">
@@ -26,34 +70,7 @@
         <tr>
             <td>
 
-                <asp:GridView ID="UserGridView" DataKeyNames="UserId" runat="server" AlternatingRowStyle-BackColor="#556591"
-                    AutoGenerateColumns="false" ShowFooter="true" HeaderStyle-Font-Bold="true" Width="799px">
-                    <Columns>
-                        <asp:TemplateField HeaderText="User ID">
-                            <ItemTemplate>
-                                <asp:Label ID="userId" runat="server" Text='<%#Eval("UserId") %>'/>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Email">
-                            <ItemTemplate>
-                                <asp:Label ID="emailTB" runat="server" Text='<%#Eval("Email") %>'/>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Active">
-                            <ItemTemplate>
-                                <asp:Label ID="ActiveTB" runat="server" Text='<%#Eval("Active") %>'/>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                       <asp:TemplateField>
-                           <ItemTemplate>
-                                <div style="text-align:center">
-                                    <asp:Button ID="ButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonEdit_Command"/>
-                                    <asp:Button ID="ButtonDelete" runat="server" CommandName="DeleteUser"  Text="Delete" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonDelete_Command" />
-                                </div>
-                            </ItemTemplate>
-                       </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
+                
             </td>
         </tr>
         <tr>
