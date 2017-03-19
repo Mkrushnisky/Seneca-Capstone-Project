@@ -36,7 +36,7 @@ namespace A1___Website_UI
             if (reader.Read())
             {
                 Boolean active = false;
-                if (reader.GetString(reader.GetOrdinal("Active")) == "1")
+                if (reader.GetString(reader.GetOrdinal("Active")) == "True")
                 {
                     active = true;
                 }

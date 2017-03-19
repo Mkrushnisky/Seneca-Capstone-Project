@@ -68,6 +68,21 @@ namespace A1___Website_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                
+                if(HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                {
+                    //TextBox1.Text = "Home page for " + HttpContext.Current.User.Identity.Name;
+                    adminPagesID.Visible = true;
+                }
+                else
+                {
+                    //TextBox1.Text = "Home page for guest user.";
+                    adminPagesID.Visible = false;
+                }
+                
+            }
             /*if (WebSecurity.CurrentUserId != "admin.dg.com")
             {
                 adminPagesID.Visible = false;
@@ -79,5 +94,6 @@ namespace A1___Website_UI
             FormsAuthentication.SignOut();
             FormsAuthentication.RedirectToLoginPage();
         }
+
     }
 }

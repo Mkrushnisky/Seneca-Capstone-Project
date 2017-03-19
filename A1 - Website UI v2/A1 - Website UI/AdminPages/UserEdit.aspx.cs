@@ -18,6 +18,14 @@ namespace A1___Website_UI.AdminPages
         {
             if (!IsPostBack)
             {
+                if (HttpContext.Current.User.Identity.Name != "admin@dg.com")
+                {
+                    string returnUrl = "~/SearchMenu.aspx";
+
+                    // check if it exists, if not then redirect to default page
+                    if (!(returnUrl == null))
+                        Response.Redirect(returnUrl);
+                }
                 UserIdHF.Value = Request.QueryString["User"];
                 loadUser();
             }

@@ -110,11 +110,7 @@
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
-            <li><a href="#" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Stats">
-                
-                </a>
-                
-            </li>      
+            
           
             <li class="dropdown" id="adminPagesID" runat="server">
                 <a href="/AdminPages/Users.aspx" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
@@ -157,17 +153,22 @@
                     <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
                 </li>
             </ul>
+            
         </div>
         <!-- /.navbar-collapse -->
     </nav>
      <form id="Form1" runat="server">
+         
     <div id="page-wrapper">
         <div class="container-fluid">
             <!-- Page Heading -->
             <div class="row" id="main" >
                 <div class="col-sm-12 col-md-12 well" id="content">
                     
-                    
+                    <div>
+                <asp:Button style="float:right" CssClass="btn btn-sm btn-primary"  ID="LogOff" runat="server" Text="Log Off" OnClick="LogOff_Click" />
+
+            </div>
                      <div>
                          
         <asp:ContentPlaceHolder ID="body1" runat="server">
@@ -180,9 +181,12 @@
             <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
+        
+
     </div>
     <!-- /#page-wrapper -->
-         <asp:Button class="fa fa-bar-chart-o" ID="LogOff" runat="server" Text="Log Off" OnClick="LogOff_Click" />
+         
+        <!--  <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>-->
     </form>
 </div><!-- /#wrapper -->
     
