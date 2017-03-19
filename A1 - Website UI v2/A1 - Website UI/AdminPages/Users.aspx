@@ -8,10 +8,15 @@
             <h3 class="site-title">
                 Users
             </h3>
+            <asp:TextBox ID="UserTB" runat="server" Visible="false"></asp:TextBox>
         </div>
         <div class="row">
-            <asp:GridView ID="UserGridView" DataKeyNames="UserId" runat="server" AlternatingRowStyle-BackColor="#556591"
-                AutoGenerateColumns="false" ShowFooter="true" HeaderStyle-Font-Bold="true" Width="799px">
+            <asp:GridView ID="UserGridView" DataKeyNames="UserId" runat="server"
+                CssClass="table table-striped table-bordered table-hover"
+                AlternatingRowStyle-BackColor="#556591"
+                AutoGenerateColumns="false" 
+                HeaderStyle-Font-Bold="true" HeaderStyle-BackColor="#b15315" 
+                AllowPaging="true" AllowSorting="true" ShowFooter="true" Width="70%" HorizontalAlign="Center">
                 <Columns>
                     <asp:TemplateField HeaderText="User ID">
                         <ItemTemplate>
@@ -31,56 +36,14 @@
                     <asp:TemplateField>
                         <ItemTemplate>
                             <div style="text-align:center">
-                                <asp:Button ID="ButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonEdit_Command"/>
-                                <asp:Button ID="ButtonDelete" runat="server" CommandName="DeleteUser"  Text="Delete" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonDelete_Command" />
+                                <asp:Button ID="ButtonEdit" runat="server" CssClass="btn btn-sm" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonEdit_Command"/>
+                                <asp:Button ID="ButtonDelete" runat="server" CssClass="btn btn-sm" CommandName="DeleteUser"  Text="Delete" CommandArgument='<%#Eval("UserId") %>' OnCommand="ButtonDelete_Command" />
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
+            <asp:Label ID="lblmsg" runat="server"></asp:Label>
         </div>
     </div>
-
-
-
-
-
-
-
-    <table>
-        <tr>
-            <td colspan="3">
-                <h4>Users</h4>
-            </td>
-            <td class="auto-style4"></td>
-            <td class="auto-style4"></td>
-            <td class="auto-style5"></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div >
-                <br />&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="lblmsg" runat="server"></asp:Label>
-                    <asp:TextBox ID="UserTB" runat="server" Visible="false"></asp:TextBox>
-                </div>
-            </td>
-        </tr>
-    </table>
 </asp:Content>
