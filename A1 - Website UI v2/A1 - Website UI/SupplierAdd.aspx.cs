@@ -30,10 +30,15 @@ namespace A1___Website_UI
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (CheckBox1.Checked == true)
+            {
                 DropDownList1.Enabled = true;
+                DropDownList1.Visible = true;
+            }
+               
             else if (CheckBox1.Checked == false)
             {
                 DropDownList1.Enabled = false;
+                DropDownList1.Visible = false;
                 DropDownList1.SelectedIndex = 0;
             }
 
@@ -215,26 +220,53 @@ namespace A1___Website_UI
             }
             conn.Close();
 
-            // Insert Base Supplier Data to create Id for Supplier
-            string AddSupplier = "INSERT INTO Supplier (SupId, SName, AddressId) VALUES (NULL, '" + TextBox1.Text + "', '" + Addressid.Text + "')";
-            cmd = new MySqlCommand(AddSupplier, conn);
-            conn.Open();
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
+            if (CheckBox1.Checked == true)
             {
-            }
-            conn.Close();
-            //Get new Supplier Id to assign Sub-Categories to it
-            conn.Open();
-            string getId = "SELECT SupId FROM Supplier ORDER BY SupId DESC LIMIT 1";
-            cmd = new MySqlCommand(getId, conn);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                GetSupNum.Text = reader.GetString(0);
-            }
-            conn.Close();
+                string AddDistributor = "INSERT INTO Distributor (DisId, SupId, DisName, AddressId) VALUES (NULL, '" + DropDownList1.SelectedValue + "', '" + TextBox1.Text + "', '" + Addressid.Text + "')";
+                cmd = new MySqlCommand(AddDistributor, conn);
+                conn.Open();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                }
+                conn.Close();
 
+                //Get new Distributor Id to assign Sub-Categories to it
+                conn.Open();
+                string getId = "SELECT DisId FROM Distributor ORDER BY DisId DESC LIMIT 1";
+                cmd = new MySqlCommand(getId, conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    GetSupNum.Text = reader.GetString(0);
+                }
+                conn.Close();
+            }
+
+
+            else
+            {
+                // Insert Base Supplier Data to create Id for Supplier
+                string AddSupplier = "INSERT INTO Supplier (SupId, SName, AddressId) VALUES (NULL, '" + TextBox1.Text + "', '" + Addressid.Text + "')";
+                cmd = new MySqlCommand(AddSupplier, conn);
+                conn.Open();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                }
+                conn.Close();
+                //Get new Supplier Id to assign Sub-Categories to it
+                conn.Open();
+                string getId = "SELECT SupId FROM Supplier ORDER BY SupId DESC LIMIT 1";
+                cmd = new MySqlCommand(getId, conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    GetSupNum.Text = reader.GetString(0);
+                }
+                conn.Close();
+            }
+            
             //Adds Sub-Categories to Supplier
 
             for (int i = 0; i < ToAddListBox.Items.Count; i++)
