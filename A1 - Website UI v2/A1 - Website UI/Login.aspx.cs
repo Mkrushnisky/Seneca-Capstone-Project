@@ -39,7 +39,7 @@ namespace A1___Website_UI
                 {
                     active = true;
                 }
-                if(reader.GetString(reader.GetOrdinal("Active")) == "1")
+                if(reader.GetString(reader.GetOrdinal("Active")) == "True")
                 {
                     active = true;
                 }

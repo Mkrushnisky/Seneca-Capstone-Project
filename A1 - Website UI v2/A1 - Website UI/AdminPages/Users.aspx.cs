@@ -35,6 +35,14 @@ namespace A1___Website_UI.AdminPages
                         Response.Redirect(Request.UrlReferrer.AbsoluteUri);
                     }
                 }*/
+                if (HttpContext.Current.User.Identity.Name != "admin@dg.com")
+                {
+                    string returnUrl = "~/SearchMenu.aspx";
+
+                    // check if it exists, if not then redirect to default page
+                    if (!(returnUrl == null))
+                    Response.Redirect(returnUrl);
+                }
                 UserTB.Text = Request.QueryString["User"];
                 loadUsers();
             }
