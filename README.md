@@ -19,17 +19,15 @@ No changes so far
 * Merged Search Page and Search Results Page to increase usability and modernize look
 * Implemented Bootstrap to all existing pages
 * Added Logout Feature
+* Added Add Category
 
 ## To-do
 
 * Validation of Data Entry
 * Initialize permissions to Edit and Delete Functionality to Search Page
-
 * Edit Distributor Page
 * Edit Contact Page
-
 * Add Sub-Category Page
 * Add Contact Page
-
 * Reports
 
