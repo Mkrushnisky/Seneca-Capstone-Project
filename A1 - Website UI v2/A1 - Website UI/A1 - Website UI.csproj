@@ -78,6 +78,7 @@
     <Content Include="default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Image\add-button-md.png" />
+    <Content Include="Image\jcr31kxb.bmp" />
     <Content Include="Image\nexkk371.bmp" />
     <Content Include="Register.aspx" />
     <Content Include="Login.aspx" />
@@ -91,6 +92,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\Dashboard.js" />
+    <Content Include="SubCategoryAdd.aspx" />
     <Content Include="SupplierAdd.aspx" />
     <Content Include="SupplierEdit.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -148,6 +150,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubCategoryAdd.aspx.cs">
+      <DependentUpon>SubCategoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubCategoryAdd.aspx.designer.cs">
+      <DependentUpon>SubCategoryAdd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SupplierResults.aspx.cs">
       <DependentUpon>SupplierResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

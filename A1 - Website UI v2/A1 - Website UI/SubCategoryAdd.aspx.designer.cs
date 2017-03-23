@@ -10,42 +10,51 @@
 namespace A1___Website_UI {
     
     
-    public partial class CategoryAdd {
+    public partial class SubCategoryAdd {
         
         /// <summary>
-        /// TextBox1 control.
+        /// CatIDTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox CatIDTB;
         
         /// <summary>
-        /// CategoryTB control.
+        /// CategoryDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CategoryTB;
+        protected global::System.Web.UI.WebControls.DropDownList CategoryDDL;
         
         /// <summary>
-        /// SaveBT control.
+        /// SubCategoryTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveBT;
+        protected global::System.Web.UI.WebControls.TextBox SubCategoryTB;
         
         /// <summary>
-        /// CancelBT control.
+        /// ToAddIMG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CancelBT;
+        protected global::System.Web.UI.WebControls.ImageButton ToAddIMG;
+        
+        /// <summary>
+        /// SubCatGV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView SubCatGV;
     }
 }

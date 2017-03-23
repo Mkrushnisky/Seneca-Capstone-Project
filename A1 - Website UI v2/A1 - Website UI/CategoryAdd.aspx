@@ -9,6 +9,7 @@
                     <h3>Add New Category</h3>
                 </div>
                 <div class="col-md-3">
+                    <asp:TextBox ID="TextBox1" runat="server" Visible="false"></asp:TextBox>
                 </div>
                 <div class="col-md-3">
                 </div>
