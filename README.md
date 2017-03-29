@@ -20,6 +20,7 @@ No changes so far
 * Implemented Bootstrap to all existing pages
 * Added Logout Feature
 * Added Add Category
+* Add Sub-Category Page
 
 ## To-do
 
@@ -27,7 +28,6 @@ No changes so far
 * Initialize permissions to Edit and Delete Functionality to Search Page
 * Edit Distributor Page
 * Edit Contact Page
-* Add Sub-Category Page
 * Add Contact Page
 * Reports
 
