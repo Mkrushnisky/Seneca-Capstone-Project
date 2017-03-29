@@ -428,5 +428,21 @@ namespace A1___Website_UI
 
         }
 
+        protected void ClearBtn_Click(object sender, EventArgs e)
+        {
+            DropDownCategory.Items.Clear();
+            DropDownSubCategory.Items.Clear();
+            DropDownSupplier.Items.Clear();
+            DropDownDistributor.Items.Clear();
+            DropDownContactName.Items.Clear();
+            CategoryBind();
+            SubCategoryBind(sender, e);
+            SupplierBind(sender, e);
+            DistributorBind(sender, e);
+            ContactBind(sender, e);
+            DivGVSubCategory.Visible = false;
+            DivGVSupplier.Visible = false;
+            DivGVDistributor.Visible = false;
+        }
     }
 }
