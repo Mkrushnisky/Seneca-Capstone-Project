@@ -92,6 +92,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\Dashboard.js" />
+    <Content Include="Scripts\SearchableDDL.js" />
     <Content Include="SubCategoryAdd.aspx" />
     <Content Include="SupplierAdd.aspx" />
     <Content Include="SupplierEdit.aspx" />
