@@ -92,6 +92,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\Dashboard.js" />
     <Content Include="ContactAdd.aspx" />
+    <Content Include="SubCategoryAdd.aspx" />
     <Content Include="SupplierAdd.aspx" />
     <Content Include="DistributorEdit.aspx" />
     <Content Include="SupplierEdit.aspx" />
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="ContactAdd.aspx.designer.cs">
       <DependentUpon>ContactAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubCategoryAdd.aspx.cs">
+      <DependentUpon>SubCategoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubCategoryAdd.aspx.designer.cs">
+      <DependentUpon>SubCategoryAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupplierResults.aspx.cs">
       <DependentUpon>SupplierResults.aspx</DependentUpon>

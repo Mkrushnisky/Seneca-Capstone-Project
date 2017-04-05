@@ -150,7 +150,7 @@
                     <a href="/CategoryAdd.aspx"><i class="fa fa-fw fa-paper-plane-o"></i> Add Category</a>
                 </li>
                 <li>
-                    <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
+                    <a href="/SubCategoryAdd.aspx"><i class="fa fa-fw fa fa-question-circle"></i> Add Sub-Category</a>
                 </li>
             </ul>
             
