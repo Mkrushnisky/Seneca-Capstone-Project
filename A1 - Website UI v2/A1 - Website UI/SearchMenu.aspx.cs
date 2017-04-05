@@ -75,6 +75,7 @@ namespace A1___Website_UI
         {
             var conn = new MySqlConnection(strcon);
             string getdata = "";
+            int errorCheck = 0;
 
             if(DropDownContactName.SelectedIndex != 0)
             {
@@ -99,40 +100,35 @@ namespace A1___Website_UI
             {
                 getdata = "SELECT * FROM Distributor INNER JOIN Contact ON Distributor.DisId = Contact.SupId WHERE DisId IN ( SELECT DISTINCT Distributor.DisId FROM Distributor INNER JOIN Supplier ON Distributor.SupId = Supplier.SupId WHERE Supplier.SupId = '" + DropDownSupplier.SelectedValue + "') AND Contact.Main = 1";
             }
+            else
+            {
+                //getdata = "SELECT * FROM Distributor INNER JOIN Contact ON Distributor.DisId = Contact.SupId";
+                errorCheck = 1;
+                DivGVDistributor.Visible = false;
+            }
+
+            if(errorCheck == 0)
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(getdata, conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                int count = ds.Tables[0].Rows.Count;
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    GridViewDistributor.DataSource = ds;
+                    GridViewDistributor.DataBind();
+                }
+                else
+                {
+                //    ds.Tables[0].Rows.Add(ds.Tables[0].NewRow());
+                    GridViewDistributor.DataSource = ds;
+                    GridViewDistributor.DataBind();
+                //    int columncount = GridViewDistributor.Rows[0].Cells.Count;
+                }
+            }
             
- 
-
-            /*if (DropDownSubCategory.SelectedIndex != 0 && DropDownSupplier.SelectedIndex == 0 && DropDownDistributor.SelectedIndex == 0)
-            {
-                getdata = "SELECT * FROM Distributor INNER JOIN Contact ON Distributor.DisId = Contact.SupId WHERE Distributor.DisId = ( SELECT DISTINCT Distributor.DisId FROM Distributor INNER JOIN SubCatSupplier ON Distributor.DisId = SubCatSupplier.SupId INNER JOIN SubCategory ON SubCatSupplier.SubCatId = SubCategory.SubCatId WHERE SubCatSupplier.SubCatId ='" + DropDownSubCategory.SelectedValue + "' AND SubCatSupplier.SupId = Distributor.DisId )";
-            }
-            else if (DropDownSubCategory.SelectedIndex != 0 && DropDownSupplier.SelectedIndex != 0 && DropDownDistributor.SelectedIndex == 0)
-            {
-                getdata = "SELECT * FROM Distributor INNER JOIN Contact ON Distributor.DisId = Contact.SupId WHERE Distributor.DisId = ( SELECT DISTINCT Distributor.DisId FROM Distributor INNER JOIN SubCatSupplier ON Distributor.DisId = SubCatSupplier.SupId INNER JOIN SubCategory ON SubCatSupplier.SubCatId = SubCategory.SubCatId INNER JOIN Supplier ON Distributor.SupId = Supplier.SupId WHERE SubCatSupplier.SubCatId IN (SELECT SubCatId FROM SubCategory WHERE SubCatId = '" + DropDownSubCategory.SelectedValue + "') AND Supplier.SupId = '" + DropDownSupplier.SelectedValue + "' AND SubCatSupplier.SupId = Distributor.DisId )";
-            }
-            else
-            {
-                
-            }*/
-
-            conn.Open();
-            var cmd = new MySqlCommand(getdata, conn);
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            int count = ds.Tables[0].Rows.Count;
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                GridViewDistributor.DataSource = ds;
-                GridViewDistributor.DataBind();
-            }
-            else
-            {
-            //    ds.Tables[0].Rows.Add(ds.Tables[0].NewRow());
-                GridViewDistributor.DataSource = ds;
-                GridViewDistributor.DataBind();
-            //    int columncount = GridViewDistributor.Rows[0].Cells.Count;
-            }
         }
 
         protected void loadSubCategories()
@@ -390,8 +386,8 @@ namespace A1___Website_UI
             DropDownContactName.SelectedIndex = 0;
             DivGVSubCategory.Visible = false;
             DivGVSupplier.Visible = false;
-            loadDistributors();
             DivGVDistributor.Visible = true;
+            loadDistributors();
         }
 
         //Changes when Contact Name is modified
@@ -436,5 +432,21 @@ namespace A1___Website_UI
 
         }
 
+        protected void ClearBtn_Click(object sender, EventArgs e)
+        {
+            DropDownCategory.Items.Clear();
+            DropDownSubCategory.Items.Clear();
+            DropDownSupplier.Items.Clear();
+            DropDownDistributor.Items.Clear();
+            DropDownContactName.Items.Clear();
+            CategoryBind();
+            SubCategoryBind(sender, e);
+            SupplierBind(sender, e);
+            DistributorBind(sender, e);
+            ContactBind(sender, e);
+            DivGVSubCategory.Visible = false;
+            DivGVSupplier.Visible = false;
+            DivGVDistributor.Visible = false;
+        }
     }
 }

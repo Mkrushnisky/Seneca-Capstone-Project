@@ -52,6 +52,12 @@ namespace A1___Website_UI
             }
             conn.Close();
             Add();
+            DialogResult add = MessageBox.Show("Category Added.  Add Sub-Categories Now?", "Go to Sub-Category Add?",
+                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (add == DialogResult.Yes)
+            {
+                Response.Redirect("~/SubCategoryAdd.aspx?category=" + TextBox1.Text + "");
+            }
             Response.Redirect("~/SearchMenu.aspx");
         }
 
@@ -68,6 +74,17 @@ namespace A1___Website_UI
             {
             }
             conn.Close();
+
+            conn.Open();
+            string getCat = "SELECT CatId FROM Category ORDER BY CatId DESC LIMIT 1";
+            cmd = new MySqlCommand(getCat, conn);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                TextBox1.Text = reader.GetString(0);
+            }
+            conn.Close();
+
         }
 
         protected void CancelBT_Click(object sender, EventArgs e)

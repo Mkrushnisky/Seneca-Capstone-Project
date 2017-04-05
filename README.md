@@ -16,6 +16,18 @@ No changes so far
 * Added Functionality to Search Supplier
 * Added Database Functionality for Login
 * Restricted Access for User Activation to Adminitrator
+* Merged Search Page and Search Results Page to increase usability and modernize look
+* Implemented Bootstrap to all existing pages
+* Added Logout Feature
+* Added Add Category
+* Add Sub-Category Page
 
 ## To-do
+
+* Validation of Data Entry
+* Initialize permissions to Edit and Delete Functionality to Search Page
+* Edit Distributor Page
+* Edit Contact Page
+* Add Contact Page
+* Reports
 
