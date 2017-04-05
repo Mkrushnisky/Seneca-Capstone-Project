@@ -92,6 +92,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\Dashboard.js" />
     <Content Include="SupplierAdd.aspx" />
+    <Content Include="DistributorEdit.aspx" />
     <Content Include="SupplierEdit.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -148,6 +149,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DistributorEdit.aspx.cs">
+      <DependentUpon>DistributorEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistributorEdit.aspx.designer.cs">
+      <DependentUpon>DistributorEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SupplierResults.aspx.cs">
       <DependentUpon>SupplierResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
