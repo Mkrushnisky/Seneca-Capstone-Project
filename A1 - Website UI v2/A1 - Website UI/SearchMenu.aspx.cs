@@ -409,7 +409,7 @@ namespace A1___Website_UI
             if (e.CommandName == "Edit")
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
-                //Response.Redirect("~/CategoryEdit.aspx?category=" + rowIndex + "");
+                Response.Redirect("~/SupplierEdit.aspx?supplier=" + rowIndex + "");
             }
         }
 

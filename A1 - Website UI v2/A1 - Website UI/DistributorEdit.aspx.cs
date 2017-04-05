@@ -231,7 +231,7 @@ namespace A1___Website_UI
         {
             var conn = new MySqlConnection(strcon);
             conn.Open();
-            string updateDistributor = "UPDATE Distributor SET SName = '" + DistributorNameTB.Text + "' WHERE Distributor.DisId = '" + GetDisNum.Text + "'";
+            string updateDistributor = "UPDATE Distributor SET DisName = '" + DistributorNameTB.Text + "' WHERE Distributor.DisId = '" + GetDisNum.Text + "'";
             var cmd = new MySqlCommand(updateDistributor, conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -270,7 +270,7 @@ namespace A1___Website_UI
                 if (ToAddListBox.Items[i].Selected == true || ToAddListBox.Items.Count > 0)
                 {
                     conn.Open();
-                    string AddSubCategory = "INSERT INTO SubCatSupplier (SCSId, SubCatId, DisId) VALUES (NULL, '" + ToAddListBox.Items[i].Value + "', '" + GetDisNum.Text + "')";
+                    string AddSubCategory = "INSERT INTO SubCatSupplier (SCSId, SubCatId, SupId) VALUES (NULL, '" + ToAddListBox.Items[i].Value + "', '" + GetDisNum.Text + "')";
                     cmd = new MySqlCommand(AddSubCategory, conn);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())

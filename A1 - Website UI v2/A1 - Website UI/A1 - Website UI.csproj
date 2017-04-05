@@ -91,6 +91,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\Dashboard.js" />
+    <Content Include="ContactAdd.aspx" />
     <Content Include="SupplierAdd.aspx" />
     <Content Include="DistributorEdit.aspx" />
     <Content Include="SupplierEdit.aspx" />
@@ -155,6 +156,13 @@
     </Compile>
     <Compile Include="DistributorEdit.aspx.designer.cs">
       <DependentUpon>DistributorEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactAdd.aspx.cs">
+      <DependentUpon>ContactAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactAdd.aspx.designer.cs">
+      <DependentUpon>ContactAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupplierResults.aspx.cs">
       <DependentUpon>SupplierResults.aspx</DependentUpon>
