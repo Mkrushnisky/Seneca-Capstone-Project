@@ -135,7 +135,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a onclick="validateUser" href="/SupplierAdd.aspx" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  Add <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <a onclick="validateUser" href="/SupplierAdd.aspx" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i> Add Supplier<i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-2" class="collapse">
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Category</a></li>
@@ -144,13 +144,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="investigaciones/favoritas"><i class="fa fa-fw fa-user-plus"></i>  MENU 3</a>
+                    <a href="/ContactAdd.aspx"><i class="fa fa-fw fa-user-plus"></i> Add Contact </a>
                 </li>
                 <li>
-                    <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i> MENU 4</a>
+                    <a href="/CategoryAdd.aspx"><i class="fa fa-fw fa-paper-plane-o"></i> Add Category</a>
                 </li>
                 <li>
-                    <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
+                    <a href="/SubCategoryAdd.aspx"><i class="fa fa-fw fa fa-question-circle"></i> Add Sub-Category</a>
                 </li>
             </ul>
             

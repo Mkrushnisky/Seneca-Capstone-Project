@@ -409,7 +409,7 @@ namespace A1___Website_UI
             if (e.CommandName == "Edit")
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
-                //Response.Redirect("~/CategoryEdit.aspx?category=" + rowIndex + "");
+                Response.Redirect("~/SupplierEdit.aspx?supplier=" + rowIndex + "");
             }
         }
 
@@ -420,7 +420,11 @@ namespace A1___Website_UI
 
         protected void DisButtonEdit_Command(object sender, CommandEventArgs e)
         {
-
+            if (e.CommandName == "Edit")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect("~/DistributorEdit.aspx?distributor=" + rowIndex + "");
+            }
         }
 
         protected void DisButtonDelete_Command(object sender, CommandEventArgs e)
