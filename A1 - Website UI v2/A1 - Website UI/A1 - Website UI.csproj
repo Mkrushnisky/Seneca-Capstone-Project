@@ -66,6 +66,7 @@
     <Content Include="AdminPages\UserEdit.aspx" />
     <Content Include="AdminPages\Users.aspx" />
     <Content Include="CategoryAdd.aspx" />
+    <Content Include="ContactEdit.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="CategoryAdd.aspx.designer.cs">
       <DependentUpon>CategoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactEdit.aspx.cs">
+      <DependentUpon>ContactEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactEdit.aspx.designer.cs">
+      <DependentUpon>ContactEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

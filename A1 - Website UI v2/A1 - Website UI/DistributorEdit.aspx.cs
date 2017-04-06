@@ -432,12 +432,12 @@ namespace A1___Website_UI
                 LNameTB.Text = reader.GetString(reader.GetOrdinal("LName"));
                 CStreetTB.Text = reader.GetString(reader.GetOrdinal("Street"));
                 CCityTB.Text = reader.GetString(reader.GetOrdinal("City"));
-                //CCountryDDL.Items.FindByText(reader.GetString(reader.GetOrdinal("Country"))).Selected = true;
+                CCountryDDL.SelectedValue = CCountryDDL.Items.FindByText(reader.GetString(reader.GetOrdinal("Country"))).Value;
                 if (reader.GetString(reader.GetOrdinal("Country")) == "Canada" || reader.GetString(reader.GetOrdinal("Country")) == "United States")
                 {
-                    //CProvinceDDL.Enabled = true;
-                    //CProvince(sender, e);
-                    //CProvinceDDL.Items.FindByText(reader.GetString(reader.GetOrdinal("Province"))).Selected = true;
+                    CProvinceDDL.Enabled = true;
+                    CProvince(sender, e);
+                    CProvinceDDL.SelectedValue = CProvinceDDL.Items.FindByText(reader.GetString(reader.GetOrdinal("Province"))).Value;
                 }
                 CPostalCodeTB.Text = reader.GetString(reader.GetOrdinal("PostalCode"));
                 CAddressid.Text = reader.GetString(reader.GetOrdinal("AddressId"));

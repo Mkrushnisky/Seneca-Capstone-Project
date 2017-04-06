@@ -21,13 +21,13 @@ No changes so far
 * Added Logout Feature
 * Added Add Category
 * Add Sub-Category Page
-
-## To-do
-
-* Validation of Data Entry
 * Initialize permissions to Edit and Delete Functionality to Search Page
 * Edit Distributor Page
 * Edit Contact Page
 * Add Contact Page
+
+## To-do
+
+* Validation of Data Entry
 * Reports
 
