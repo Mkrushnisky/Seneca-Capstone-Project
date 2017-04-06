@@ -27,6 +27,8 @@
         <div class="row text-center" style="padding-bottom: 10px;">
             <h3 class="site-title">
                 Search Page
+                <asp:TextBox ID="supplierTB" runat="server" Visible="false"></asp:TextBox>
+                    <asp:ListBox ID="addLB" runat="server" Visible="false"></asp:ListBox>
             </h3>
         </div>
         <div class="col-md-8">
@@ -152,8 +154,10 @@
                     <asp:TemplateField>
                         <ItemTemplate>
                             <div style="text-align:center">
-                                <asp:Button ID="SupButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("SupId") %>' OnCommand="SupButtonEdit_Command"/>
-                                <asp:Button ID="SupButtonDelete" runat="server" CommandName="Delete" Text="Delete" CommandArgument='<%#Eval("SupId") %>' OnCommand="SupButtonDelete_Command" />
+                                <asp:Button ID="SupButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("SupId") %>' OnCommand="SupButtonEdit_Command" Visible="false"/>
+                                <asp:Button ID="SupButtonDelete" runat="server" CommandName="Delete" Text="Delete" CommandArgument='<%#Eval("SupId") %>' OnCommand="SupButtonDelete_Command" Visible="false"/>
+                                <asp:Button ID="ContactButtonEdit" runat="server" CommandName="CEdit" Text="Edit" CommandArgument='<%#Eval("ContactId") %>' OnCommand="ContactButtonEdit_Command" Visible="false"/>
+                                <asp:Button ID="ContactButtonDelete" runat="server" CommandName="CDelete" Text="Delete" CommandArgument='<%#Eval("ContactId") %>' OnCommand="ContactButtonDelete_Command" Visible="false"/>
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -165,7 +169,7 @@
             <asp:GridView ID="GridViewDistributor" runat="server" DataKeyNames="DisId"
                 CssClass="table table-striped table-bordered table-hover"
                 AlternatingRowStyle-BackColor="#556591"
-                AutoGenerateColumns="false" 
+                AutoGenerateColumns="false" OnRowDeleting="GridViewDistributor_RowDeleting"
                 HeaderStyle-Font-Bold="true" HeaderStyle-BackColor="#b15315" 
                 AllowPaging="true" AllowSorting="true">
                 <Columns>
@@ -215,8 +219,11 @@
                     <asp:TemplateField>
                         <ItemTemplate>
                             <div style="text-align:center">
-                                <asp:Button ID="DisButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("DisId") %>' OnCommand="DisButtonEdit_Command"/>
-                                <asp:Button ID="DisButtonDelete" runat="server" CommandName="Delete" Text="Delete" CommandArgument='<%#Eval("DisId") %>' OnCommand="DisButtonDelete_Command" />
+                                <asp:Button ID="DisButtonEdit" runat="server" CommandName="Edit" Text="Edit" CommandArgument='<%#Eval("DisId") %>' OnCommand="DisButtonEdit_Command" Visible="false"/>
+                                <asp:Button ID="DisButtonDelete" runat="server" CommandName="Delete" Text="Delete" CommandArgument='<%#Eval("DisId") %>' OnCommand="DisButtonDelete_Command" Visible="false"/>
+                                <asp:Button ID="ContactButtonEdit" runat="server" CommandName="CEdit" Text="Edit" CommandArgument='<%#Eval("ContactId") %>' OnCommand="ContactButtonEdit_Command" Visible="false"/>
+                                <asp:Button ID="ContactButtonDelete" runat="server" CommandName="CDelete" Text="Delete" CommandArgument='<%#Eval("ContactId") %>' OnCommand="ContactButtonDelete_Command" Visible="false"/>
+                            
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>

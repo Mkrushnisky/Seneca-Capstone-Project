@@ -75,11 +75,13 @@ namespace A1___Website_UI
                 {
                     //TextBox1.Text = "Home page for " + HttpContext.Current.User.Identity.Name;
                     adminPagesID.Visible = true;
+                    addDropdown.Visible = true;
                 }
                 else
                 {
                     //TextBox1.Text = "Home page for guest user.";
                     adminPagesID.Visible = false;
+                    addDropdown.Visible = false;
                 }
                 
             }
@@ -93,6 +95,11 @@ namespace A1___Website_UI
         {
             FormsAuthentication.SignOut();
             FormsAuthentication.RedirectToLoginPage();
+        }
+
+        protected void subMenu2Toggle(object sender, EventArgs e)
+        {
+            
         }
 
     }

@@ -57,7 +57,8 @@
 			<div>
                 <asp:TextBox ID="UserPass" placeholder="Password" TextMode="Password" 
              runat="server" />
-                
+                <!-- \A[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@
+(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z -->
 				<!--<input type="password" placeholder="Password" required="" id="password" />-->
 			</div>
         <asp:RequiredFieldValidator ForeColor="Red" ID="RequiredFieldValidator2" 
