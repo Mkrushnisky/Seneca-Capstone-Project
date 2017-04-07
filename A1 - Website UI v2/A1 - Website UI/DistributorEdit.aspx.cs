@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace A1___Website_UI
 {
-    public partial class SupplierEdit : System.Web.UI.Page
+    public partial class DistributorEdit : System.Web.UI.Page
     {
         //Connection string from WebConfig
         private String strcon = ConfigurationManager.ConnectionStrings["btsdatabaseConnectionString"].ConnectionString;
@@ -21,8 +21,8 @@ namespace A1___Website_UI
         {
             if (!IsPostBack)
             {
-                SupIdHF.Value = Request.QueryString["supplier"];
-                SupplierBind();
+                DisIdHF.Value = Request.QueryString["distributor"];
+                DistributorBind();
                 CategoryBind();
                 SubCategoryBind(sender, e);
                 edit(sender, e);
@@ -32,24 +32,24 @@ namespace A1___Website_UI
 
         }
 
-        //Database connection for Supplier information to bind it to the supplier dropdown list
-        protected void SupplierBind()
+        //Database connection for Distributor information to bind it to the Distributor dropdown list
+        protected void DistributorBind()
         {
             using (var conn = new MySqlConnection(strcon))
             {
                 conn.Open();
-                string Query = "SELECT Supplier.* FROM Supplier";
+                string Query = "SELECT Distributor.* FROM Distributor";
                 using (var cmd = new MySqlCommand(Query, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.HasRows)
                         {
-                            SupplierDDL.DataSource = reader;
-                            SupplierDDL.DataValueField = "SupId";
-                            SupplierDDL.DataTextField = "SName";
-                            SupplierDDL.DataBind();
-                            SupplierDDL.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
+                            DistributorDDL.DataSource = reader;
+                            DistributorDDL.DataValueField = "DisId";
+                            DistributorDDL.DataTextField = "DisName";
+                            DistributorDDL.DataBind();
+                            DistributorDDL.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
                         }
                     }
                 }
@@ -151,24 +151,26 @@ namespace A1___Website_UI
             //Populates the Supplier and Address portion of the form
             var conn = new MySqlConnection(strcon);
             conn.Open();
-            string getSupAdd = @"SELECT 
-                                Supplier.SupId, 
-                                Supplier.SName, 
+            string getDisAdd = @"SELECT 
+                                Distributor.DisId, 
+                                Distributor.DisName, 
                                 Address.AddressId, 
                                 Address.Street, 
                                 Address.City, 
                                 Address.Province, 
                                 Address.PostalCode, 
                                 Address.Country
-                            FROM 
-                                Supplier INNER JOIN 
-                                    Address ON Supplier.AddressId = Address.AddressId
-                            WHERE Supplier.SupId = '" + SupIdHF.Value + "'";
-            var cmd = new MySqlCommand(getSupAdd, conn);
+                            FROM
+                                Distributor
+                                INNER JOIN Supplier ON Distributor.SupId = Supplier.SupId 
+                                INNER JOIN 
+                                    Address ON Distributor.AddressId = Address.AddressId
+                            WHERE Distributor.DisId = '" + DisIdHF.Value + "'";
+            var cmd = new MySqlCommand(getDisAdd, conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                SupplierNameTB.Text = reader.GetString(reader.GetOrdinal("SName"));
+                DistributorNameTB.Text = reader.GetString(reader.GetOrdinal("DisName"));
                 StreetTB.Text = reader.GetString(reader.GetOrdinal("Street"));
                 CityTB.Text = reader.GetString(reader.GetOrdinal("City"));
                 CountryDDL.Items.FindByText(reader.GetString(reader.GetOrdinal("Country"))).Selected = true;
@@ -180,7 +182,7 @@ namespace A1___Website_UI
                 }
                 PostalCodeTB.Text = reader.GetString(reader.GetOrdinal("PostalCode"));
                 Addressid.Text = reader.GetString(reader.GetOrdinal("AddressId"));
-                GetSupNum.Text = reader.GetString(reader.GetOrdinal("SupId"));
+                GetDisNum.Text = reader.GetString(reader.GetOrdinal("DisId"));
             }
             conn.Close();
 
@@ -195,7 +197,7 @@ namespace A1___Website_UI
                                         INNER JOIN
                                             SubCatSupplier ON SubCategory.SubCatId = SubCatSupplier.SubCatId
                                 WHERE        
-                                    (SubCatSupplier.SupId = '" + GetSupNum.Text + "')";
+                                    (SubCatSupplier.SupId = '" + GetDisNum.Text + "')";
                 using (cmd = new MySqlCommand(getSubCat, conn))
                 {
                     using (reader = cmd.ExecuteReader())
@@ -212,7 +214,7 @@ namespace A1___Website_UI
                 }
             }
             conn.Open();
-            string getSubCatSupplierid = @"Select * FROM SubCatSupplier WHERE SupId = '" + GetSupNum.Text + "'";
+            string getSubCatSupplierid = @"Select * FROM SubCatSupplier WHERE SupId = '" + GetDisNum.Text + "'";
             cmd = new MySqlCommand(getSubCatSupplierid, conn);
             reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -229,8 +231,8 @@ namespace A1___Website_UI
         {
             var conn = new MySqlConnection(strcon);
             conn.Open();
-            string updateSupplier = "UPDATE Supplier SET SName = '" + SupplierNameTB.Text + "' WHERE Supplier.SupId = '" + GetSupNum.Text + "'";
-            var cmd = new MySqlCommand(updateSupplier, conn);
+            string updateDistributor = "UPDATE Distributor SET DisName = '" + DistributorNameTB.Text + "' WHERE Distributor.DisId = '" + GetDisNum.Text + "'";
+            var cmd = new MySqlCommand(updateDistributor, conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -268,7 +270,7 @@ namespace A1___Website_UI
                 if (ToAddListBox.Items[i].Selected == true || ToAddListBox.Items.Count > 0)
                 {
                     conn.Open();
-                    string AddSubCategory = "INSERT INTO SubCatSupplier (SCSId, SubCatId, SupId) VALUES (NULL, '" + ToAddListBox.Items[i].Value + "', '" + GetSupNum.Text + "')";
+                    string AddSubCategory = "INSERT INTO SubCatSupplier (SCSId, SubCatId, SupId) VALUES (NULL, '" + ToAddListBox.Items[i].Value + "', '" + GetDisNum.Text + "')";
                     cmd = new MySqlCommand(AddSubCategory, conn);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -334,7 +336,7 @@ namespace A1___Website_UI
         {
             var conn = new MySqlConnection(strcon);
             conn.Open();
-            string getdata = "SELECT * FROM Contact INNER JOIN Address ON Contact.AddressId = Address.AddressId WHERE SupId = '" + SupIdHF.Value + "'";
+            string getdata = "SELECT * FROM Contact INNER JOIN Address ON Contact.AddressId = Address.AddressId WHERE SupId = '" + DisIdHF.Value + "'";
             var cmd = new MySqlCommand(getdata, conn);
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -434,7 +436,7 @@ namespace A1___Website_UI
                 if (reader.GetString(reader.GetOrdinal("Country")) == "Canada" || reader.GetString(reader.GetOrdinal("Country")) == "United States")
                 {
                     CProvinceDDL.Enabled = true;
-                    CProvince(sender,e);
+                    CProvince(sender, e);
                     CProvinceDDL.SelectedValue = CProvinceDDL.Items.FindByText(reader.GetString(reader.GetOrdinal("Province"))).Value;
                 }
                 CPostalCodeTB.Text = reader.GetString(reader.GetOrdinal("PostalCode"));
@@ -579,7 +581,7 @@ namespace A1___Website_UI
 
             //Add Contact
             conn.Open();
-            string AddContact = "INSERT INTO Contact (ContactId, SupId, FName, LName, AddressId, Email, Work, Main, Cell) VALUES ( NULL, '" + GetSupNum.Text + "', '" + FNameTB.Text + "', '" + LNameTB.Text + "', '" + CAddressid.Text + "', '" + CEmailTB.Text + "', '" + WorkTB.Text + "', '0', '" + CellTB.Text + "')";
+            string AddContact = "INSERT INTO Contact (ContactId, DisId, FName, LName, AddressId, Email, Work, Main, Cell) VALUES ( NULL, '" + GetDisNum.Text + "', '" + FNameTB.Text + "', '" + LNameTB.Text + "', '" + CAddressid.Text + "', '" + CEmailTB.Text + "', '" + WorkTB.Text + "', '0', '" + CellTB.Text + "')";
             cmd = new MySqlCommand(AddContact, conn);
             reader = cmd.ExecuteReader();
             while (reader.Read())

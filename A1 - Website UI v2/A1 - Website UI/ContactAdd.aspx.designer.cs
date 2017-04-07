@@ -10,132 +10,141 @@
 namespace A1___Website_UI {
     
     
-    public partial class SearchMenu {
+    public partial class ContactAdd {
         
         /// <summary>
-        /// supplierTB control.
+        /// GetSupNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox supplierTB;
+        protected global::System.Web.UI.WebControls.TextBox GetSupNum;
         
         /// <summary>
-        /// addLB control.
+        /// CAddressid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox addLB;
+        protected global::System.Web.UI.WebControls.TextBox CAddressid;
         
         /// <summary>
-        /// DropDownCategory control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownCategory;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// DropDownSubCategory control.
+        /// FNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownSubCategory;
+        protected global::System.Web.UI.WebControls.TextBox FNameTB;
         
         /// <summary>
-        /// DropDownSupplier control.
+        /// LNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownSupplier;
+        protected global::System.Web.UI.WebControls.TextBox LNameTB;
         
         /// <summary>
-        /// DropDownDistributor control.
+        /// CStreetTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownDistributor;
+        protected global::System.Web.UI.WebControls.TextBox CStreetTB;
         
         /// <summary>
-        /// ClearBtn control.
+        /// CCityTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ClearBtn;
+        protected global::System.Web.UI.WebControls.TextBox CCityTB;
         
         /// <summary>
-        /// DropDownContactName control.
+        /// CCountryDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownContactName;
+        protected global::System.Web.UI.WebControls.DropDownList CCountryDDL;
         
         /// <summary>
-        /// DivGVSubCategory control.
+        /// CProvinceDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivGVSubCategory;
+        protected global::System.Web.UI.WebControls.DropDownList CProvinceDDL;
         
         /// <summary>
-        /// GridViewSubCategory control.
+        /// CPostalCodeTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewSubCategory;
+        protected global::System.Web.UI.WebControls.TextBox CPostalCodeTB;
         
         /// <summary>
-        /// DivGVSupplier control.
+        /// CEmailTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivGVSupplier;
+        protected global::System.Web.UI.WebControls.TextBox CEmailTB;
         
         /// <summary>
-        /// GridViewSupplier control.
+        /// WorkTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewSupplier;
+        protected global::System.Web.UI.WebControls.TextBox WorkTB;
         
         /// <summary>
-        /// DivGVDistributor control.
+        /// CellTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivGVDistributor;
+        protected global::System.Web.UI.WebControls.TextBox CellTB;
         
         /// <summary>
-        /// GridViewDistributor control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewDistributor;
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

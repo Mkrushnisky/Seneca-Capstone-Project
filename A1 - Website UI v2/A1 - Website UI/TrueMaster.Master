@@ -58,38 +58,6 @@
 <body>
 
 
-    <!--
-    <div class="content-wrapper">
-        <div class="float-left">
-            <p class="site-title">
-                <a href="~/">DG & Associates Inc.</a>
-            </p>
-        </div>
-        <div class="float-right">
-            <section id="login">
-
-                <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
-                    <AnonymousTemplate>
-                        <ul>
-                            <li><a id="A1" href="~/Account/Register">Register</a></li>
-                            <li><a id="A2" href="~/Account/Login">Log in</a></li>
-                        </ul>
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        <p>
-                            Hello, <a class="username" href="~/Account/Manage" title="Manage your account">
-                                <asp:LoginName runat="server" CssClass="username" />
-                            </a>!
-                               
-                                    
-                        </p>
-                    </LoggedInTemplate>
-                </asp:LoginView>
-
-            </section>
-            
-        </div>
-    </div>-->
     
     <div id="throbber" style="display:none; min-height:120px;"></div>
 <div id="noty-holder"></div>
@@ -124,33 +92,20 @@
         </ul>
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav side-nav">
+            <ul class="nav navbar-nav panel side-nav">
                 <li>
-                    <a href="/SearchMenu.aspx" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> Search <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                    <ul id="submenu-1" class="collapse">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Category</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Sub-Category</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Contacts</a></li>
+                    <a href="/SearchMenu.aspx" data-toggle="collapse"><i class="fa fa-fw fa-search"></i> Search <i class="fa fa-fw "></i></a>
+                    <ul id="submenu-1">
                     </ul>
                 </li>
-                <li>
-                    <a onclick="validateUser" href="/SupplierAdd.aspx" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  Add <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                    <ul id="submenu-2" class="collapse">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Category</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Sub-Category</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Contacts</a></li>
+                <li id="addDropdown" runat="server">
+                    <a onclick="subMenu2Toggle" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-plus"></i> Add<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-2" class="collapse panel-collapse in">
+                        <li><a href="/SupplierAdd.aspx"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
+                        <li><a href="/CategoryAdd.aspx"><i class="fa fa-angle-double-right"></i> Category</a></li>
+                        <li><a href="/SubCategoryAdd.aspx"><i class="fa fa-angle-double-right"></i> Sub-Category</a></li>
+                        <li><a href="/ContactAdd.aspx"><i class="fa fa-angle-double-right"></i> Contacts</a></li>
                     </ul>
-                </li>
-                <li>
-                    <a href="investigaciones/favoritas"><i class="fa fa-fw fa-user-plus"></i>  MENU 3</a>
-                </li>
-                <li>
-                    <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i> MENU 4</a>
-                </li>
-                <li>
-                    <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
                 </li>
             </ul>
             

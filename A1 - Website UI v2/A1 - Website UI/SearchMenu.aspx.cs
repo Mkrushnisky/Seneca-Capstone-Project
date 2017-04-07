@@ -27,6 +27,7 @@ namespace A1___Website_UI
                 DistributorBind(sender, e);
                 ContactBind(sender, e);
             }
+            
         }
 
         protected void loadSuppliers()
@@ -320,25 +321,35 @@ namespace A1___Website_UI
         //Refined Contact Name Data Bind
         protected void ContactBind(object sender, EventArgs e)
         {
+            var dict = new Dictionary<object, object>();
             using (var conn = new MySqlConnection(strcon))
             {
                 conn.Open();
                 string Query = "SELECT * FROM Contact";
-                
                 using (var cmd = new MySqlCommand(Query, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.HasRows)
                         {
-                            DropDownContactName.DataSource = reader;
-                            DropDownContactName.DataValueField = "ContactId";
-                            DropDownContactName.DataTextField = "LName";
-                            DropDownContactName.DataBind();
-                            DropDownContactName.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
+
+                            while (reader.Read())
+                            {
+                                dict.Add(reader["ContactId"], reader["FName"] + " " + reader["LName"]);
+                            }
+
+
                         }
                     }
                 }
+            }
+            if (dict.Count != 0)
+            {
+                DropDownContactName.DataSource = dict;
+                DropDownContactName.DataValueField = "Key";
+                DropDownContactName.DataTextField = "Value";
+                DropDownContactName.DataBind();
+                DropDownContactName.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
             }
         }
 
@@ -365,7 +376,54 @@ namespace A1___Website_UI
             loadSuppliers();
             loadDistributors();
             DivGVSupplier.Visible = true;
+            foreach (GridViewRow row in GridViewSupplier.Rows)
+            {
+                System.Web.UI.WebControls.Button CEditButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonEdit");
+                System.Web.UI.WebControls.Button CDeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonDelete");
+
+                System.Web.UI.WebControls.Button EditButton = (System.Web.UI.WebControls.Button)row.FindControl("SupButtonEdit");
+                System.Web.UI.WebControls.Button DeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("SupButtonDelete");
+
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+
+                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                    {
+                        EditButton.Visible = true;
+                        DeleteButton.Visible = true;
+                    }
+
+
+                }
+                
+
+                CEditButton.Visible = false;
+                CDeleteButton.Visible = false;
+            }
             DivGVDistributor.Visible = true;
+            foreach (GridViewRow row in GridViewDistributor.Rows)
+            {
+                System.Web.UI.WebControls.Button CEditButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonEdit");
+                System.Web.UI.WebControls.Button CDeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonDelete");
+
+                System.Web.UI.WebControls.Button EditButton = (System.Web.UI.WebControls.Button)row.FindControl("DisButtonEdit");
+                System.Web.UI.WebControls.Button DeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("DisButtonDelete");
+
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+
+                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                    {
+                        EditButton.Visible = true;
+                        DeleteButton.Visible = true;
+                    }
+
+
+                }
+                
+                CEditButton.Visible = false;
+                CDeleteButton.Visible = false;
+            }
         }
 
         //Changes when Supplier is modified
@@ -377,7 +435,53 @@ namespace A1___Website_UI
             loadSuppliers();
             loadDistributors();
             DivGVSupplier.Visible = true;
+            foreach (GridViewRow row in GridViewSupplier.Rows)
+            {
+                System.Web.UI.WebControls.Button CEditButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonEdit");
+                System.Web.UI.WebControls.Button CDeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonDelete");
+
+                System.Web.UI.WebControls.Button EditButton = (System.Web.UI.WebControls.Button)row.FindControl("SupButtonEdit");
+                System.Web.UI.WebControls.Button DeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("SupButtonDelete");
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+
+                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                    {
+                        EditButton.Visible = true;
+                        DeleteButton.Visible = true;
+                    }
+
+
+                }
+               
+
+                CEditButton.Visible = false;
+                CDeleteButton.Visible = false;
+            }
             DivGVDistributor.Visible = true;
+            foreach (GridViewRow row in GridViewDistributor.Rows)
+            {
+                System.Web.UI.WebControls.Button CEditButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonEdit");
+                System.Web.UI.WebControls.Button CDeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonDelete");
+
+                System.Web.UI.WebControls.Button EditButton = (System.Web.UI.WebControls.Button)row.FindControl("DisButtonEdit");
+                System.Web.UI.WebControls.Button DeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("DisButtonDelete");
+
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+
+                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                    {
+                        EditButton.Visible = true;
+                        DeleteButton.Visible = true;
+                    }
+
+
+                }
+                
+                CEditButton.Visible = false;
+                CDeleteButton.Visible = false;
+            }
         }
 
         //Changes when Distributor is modified
@@ -388,6 +492,29 @@ namespace A1___Website_UI
             DivGVSupplier.Visible = false;
             DivGVDistributor.Visible = true;
             loadDistributors();
+            foreach (GridViewRow row in GridViewDistributor.Rows)
+            {
+                System.Web.UI.WebControls.Button CEditButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonEdit");
+                System.Web.UI.WebControls.Button CDeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonDelete");
+
+                System.Web.UI.WebControls.Button EditButton = (System.Web.UI.WebControls.Button)row.FindControl("DisButtonEdit");
+                System.Web.UI.WebControls.Button DeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("DisButtonDelete");
+
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+
+                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                    {
+                        EditButton.Visible = true;
+                        DeleteButton.Visible = true;
+                    }
+
+
+                }
+                
+                CEditButton.Visible = false;
+                CDeleteButton.Visible = false;
+            }
         }
 
         //Changes when Contact Name is modified
@@ -401,7 +528,53 @@ namespace A1___Website_UI
             loadSuppliers();
             loadDistributors();
             DivGVSupplier.Visible = true;
+            foreach (GridViewRow row in GridViewSupplier.Rows)
+            {
+                System.Web.UI.WebControls.Button CEditButton = (System.Web.UI.WebControls.Button) row.FindControl("ContactButtonEdit");
+                System.Web.UI.WebControls.Button CDeleteButton = (System.Web.UI.WebControls.Button) row.FindControl("ContactButtonDelete");
+
+                System.Web.UI.WebControls.Button EditButton = (System.Web.UI.WebControls.Button)row.FindControl("SupButtonEdit");
+                System.Web.UI.WebControls.Button DeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("SupButtonDelete");
+
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+
+                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                    {
+                        CEditButton.Visible = true;
+                        CDeleteButton.Visible = true;
+                    }
+
+
+                }
+               
+                EditButton.Visible = false;
+                DeleteButton.Visible = false;
+            }
             DivGVDistributor.Visible = true;
+            foreach (GridViewRow row in GridViewDistributor.Rows)
+            {
+                System.Web.UI.WebControls.Button CEditButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonEdit");
+                System.Web.UI.WebControls.Button CDeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("ContactButtonDelete");
+
+                System.Web.UI.WebControls.Button EditButton = (System.Web.UI.WebControls.Button)row.FindControl("DisButtonEdit");
+                System.Web.UI.WebControls.Button DeleteButton = (System.Web.UI.WebControls.Button)row.FindControl("DisButtonDelete");
+
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+
+                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                    {
+                        CEditButton.Visible = true;
+                        CDeleteButton.Visible = true;
+                    }
+
+
+                }
+                
+                EditButton.Visible = false;
+                DeleteButton.Visible = false;
+            }
         }
 
         protected void SupButtonEdit_Command(object sender, CommandEventArgs e)
@@ -409,23 +582,163 @@ namespace A1___Website_UI
             if (e.CommandName == "Edit")
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
-                //Response.Redirect("~/CategoryEdit.aspx?category=" + rowIndex + "");
+                Response.Redirect("~/SupplierEdit.aspx?supplier=" + rowIndex + "");
             }
         }
 
         protected void SupButtonDelete_Command(object sender, CommandEventArgs e)
         {
+            if (e.CommandName == "Delete")
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to Delete this Record?", "Delete Record?",
+                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    int rowIndex = Convert.ToInt32(e.CommandArgument);
+                    var conn = new MySqlConnection(strcon);
+                    string deleteSubCats = "DELETE FROM SubCatSupplier WHERE SupId = '" + rowIndex + "'";
+                    conn.Open();
+                    var cmd = new MySqlCommand(deleteSubCats, conn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
 
+                    conn.Open();
+                    string deleteAddress = "DELETE FROM Address WHERE AddressId = (SELECT AddressId FROM Supplier WHERE SupId = '" + rowIndex + "')";
+                    cmd = new MySqlCommand(deleteAddress, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
+
+                    conn.Open();
+                    string selectContact = "SELECT AddressId FROM Contact WHERE SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(selectContact, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        addLB.Items.Add(reader.GetString(reader.GetOrdinal("AddressId")));
+                    }
+                    conn.Close();
+
+                    for (int i = 0; i < addLB.Items.Count; i++)
+                    {
+                        conn.Open();
+                        string deleteContactAddress = "DELETE FROM Address WHERE AddressID ='" + addLB.Items[i] + "'";
+                        cmd = new MySqlCommand(deleteContactAddress, conn);
+                        reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                        }
+                        conn.Close();
+                    }
+                    addLB.Items.Clear();
+
+                    conn.Open();
+                    string deleteContact = "DELETE FROM Contact WHERE SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(deleteContact, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
+
+                    conn.Open();
+                    string deleteSupplier = "DELETE FROM Supplier WHERE SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(deleteSupplier, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
+                    loadSuppliers();
+                }
+            }
         }
 
         protected void DisButtonEdit_Command(object sender, CommandEventArgs e)
         {
-
+            if (e.CommandName == "Edit")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect("~/DistributorEdit.aspx?distributor=" + rowIndex + "");
+            }
         }
 
         protected void DisButtonDelete_Command(object sender, CommandEventArgs e)
         {
+            if (e.CommandName == "Delete")
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to Delete this Record?", "Delete Record?",
+                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    int rowIndex = Convert.ToInt32(e.CommandArgument);
+                    var conn = new MySqlConnection(strcon);
+                    string deleteSubCats = "DELETE FROM SubCatSupplier WHERE SupId = '" + rowIndex + "'";
+                    conn.Open();
+                    var cmd = new MySqlCommand(deleteSubCats, conn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
 
+                    conn.Open();
+                    string deleteAddress = "DELETE FROM Address WHERE AddressId = (SELECT AddressId FROM Distributor WHERE DisId = '" + rowIndex + "')";
+                    cmd = new MySqlCommand(deleteAddress, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
+
+                    conn.Open();
+                    string selectContact = "SELECT AddressId FROM Contact WHERE SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(selectContact, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        addLB.Items.Add(reader.GetString(reader.GetOrdinal("AddressId")));
+                    }
+                    conn.Close();
+
+                    for (int i = 0; i < addLB.Items.Count; i++)
+                    {
+                        conn.Open();
+                        string deleteContactAddress = "DELETE FROM Address WHERE AddressID ='" + addLB.Items[i] + "'";
+                        cmd = new MySqlCommand(deleteContactAddress, conn);
+                        reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                        }
+                        conn.Close();
+                    }
+                    addLB.Items.Clear();
+
+                    conn.Open();
+                    string deleteContact = "DELETE FROM Contact WHERE SupId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(deleteContact, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
+
+                    conn.Open();
+                    string deleteDistributor = "DELETE FROM Distributor WHERE DisId = '" + rowIndex + "'";
+                    cmd = new MySqlCommand(deleteDistributor, conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                    }
+                    conn.Close();
+                    loadDistributors();
+                }
+            }
         }
 
         protected void ClearBtn_Click(object sender, EventArgs e)
@@ -443,6 +756,55 @@ namespace A1___Website_UI
             DivGVSubCategory.Visible = false;
             DivGVSupplier.Visible = false;
             DivGVDistributor.Visible = false;
+        }
+
+        protected void ContactButtonEdit_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "CEdit")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect("~/ContactEdit.aspx?contact=" + rowIndex + "");
+            }
+        }
+
+        protected void ContactButtonDelete_Command(object sender, CommandEventArgs e)
+        {
+            string addId = "";
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+            var conn = new MySqlConnection(strcon);
+
+            //Get AddressId from the Contact we are deleting
+            conn.Open();
+            string selectaddress = "SELECT AddressId FROM Contact WHERE ContactId = '" + rowIndex + "'";
+            var cmd = new MySqlCommand(selectaddress, conn);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                addId = reader.GetString(reader.GetOrdinal("AddressId"));
+            }
+            conn.Close();
+
+            //Delete Address of Contact we are deleting
+            conn.Open();
+            string deleteaddress = "DELETE FROM Address WHERE AddressId = '" + addId + "'";
+            cmd = new MySqlCommand(deleteaddress, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+
+            //Delete Contact
+            conn.Open();
+            string deletecontact = "DELETE FROM Contact WHERE ContactId = '" + rowIndex + "'";
+            cmd = new MySqlCommand(deletecontact, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            ClearBtn_Click(sender, e);
+        }
+
+        protected void GridViewDistributor_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
         }
     }
 }
