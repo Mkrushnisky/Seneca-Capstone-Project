@@ -40,10 +40,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.WebForms.12.0.2402.15\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +80,7 @@
     <Content Include="AdminPages\Users.aspx" />
     <Content Include="CategoryAdd.aspx" />
     <Content Include="ContactEdit.aspx" />
+    <Content Include="ContactsReport.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -94,9 +108,21 @@
     <Content Include="Scripts\Dashboard.js" />
     <Content Include="ContactAdd.aspx" />
     <Content Include="SubCategoryAdd.aspx" />
+    <Content Include="SubCategoryReport.aspx" />
     <Content Include="SupplierAdd.aspx" />
     <Content Include="DistributorEdit.aspx" />
     <Content Include="SupplierEdit.aspx" />
+    <Content Include="Database.xsc">
+      <DependentUpon>Database.xsd</DependentUpon>
+    </Content>
+    <None Include="Database.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Database.xss">
+      <DependentUpon>Database.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -136,6 +162,18 @@
     </Compile>
     <Compile Include="ContactEdit.aspx.designer.cs">
       <DependentUpon>ContactEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactsReport.aspx.cs">
+      <DependentUpon>ContactsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactsReport.aspx.designer.cs">
+      <DependentUpon>ContactsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.xsd</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -179,6 +217,13 @@
     </Compile>
     <Compile Include="SubCategoryAdd.aspx.designer.cs">
       <DependentUpon>SubCategoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubCategoryReport.aspx.cs">
+      <DependentUpon>SubCategoryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubCategoryReport.aspx.designer.cs">
+      <DependentUpon>SubCategoryReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupplierResults.aspx.cs">
       <DependentUpon>SupplierResults.aspx</DependentUpon>
@@ -228,6 +273,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GuestPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportCategory.rdlc" />
+    <EmbeddedResource Include="ReportContact.rdlc" />
+    <EmbeddedResource Include="ReportDisContact.rdlc" />
+    <EmbeddedResource Include="ReportDisSubCategory.rdlc" />
+    <EmbeddedResource Include="ReportDistributor.rdlc" />
+    <EmbeddedResource Include="ReportSubCategory.rdlc" />
+    <EmbeddedResource Include="ReportSupplier.rdlc" />
+    <EmbeddedResource Include="ReportSupplierSubCat.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
