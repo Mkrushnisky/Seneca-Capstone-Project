@@ -21,19 +21,20 @@ namespace A1___Website_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+
+                if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                {
+                }
+                else
+                {
+                    Response.Redirect("~/SearchMenu.aspx");
+                }
+            }
             if (!IsPostBack)
             {
-                if (HttpContext.Current.User.Identity.IsAuthenticated)
-                {
-
-                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
-                    {
-                    }
-                    else
-                    {
-                        Response.Redirect("~/SearchMenu.aspx");
-                    }
-                }
+                
                 CatIDTB.Text = Request.QueryString["category"];
                 CategoryBind();
             }

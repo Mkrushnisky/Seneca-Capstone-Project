@@ -49,15 +49,6 @@ namespace A1___Website_UI {
         protected global::System.Web.UI.WebControls.ListBox subcatlistboxcount;
         
         /// <summary>
-        /// DistributorCB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox DistributorCB;
-        
-        /// <summary>
         /// SupplierDDL control.
         /// </summary>
         /// <remarks>

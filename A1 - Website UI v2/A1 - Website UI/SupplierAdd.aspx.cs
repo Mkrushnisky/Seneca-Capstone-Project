@@ -18,19 +18,20 @@ namespace A1___Website_UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+
+                if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
+                {
+                }
+                else
+                {
+                    Response.Redirect("~/SearchMenu.aspx");
+                }
+            }
             if (!IsPostBack)
             {
-                if (HttpContext.Current.User.Identity.IsAuthenticated)
-                {
-
-                    if (HttpContext.Current.User.Identity.Name == "admin@dg.com")
-                    {
-                    }
-                    else
-                    {
-                        Response.Redirect("~/SearchMenu.aspx");
-                    }
-                }
+                
                 //Loads data from database
                 SupplierBind();
                 CategoryBind();
@@ -345,6 +346,10 @@ namespace A1___Website_UI
             if (SubCategoryListBox.SelectedItem != null)
             {
                 ToAddListBox.Items.Add(SubCategoryListBox.SelectedItem);
+                if(ToAddListBox.Items.Count > 0)
+                {
+
+                }
             }
         }
 
