@@ -25,9 +25,10 @@ No changes so far
 * Edit Distributor Page
 * Edit Contact Page
 * Add Contact Page
+* Reports
 
 ## To-do
 
 * Validation of Data Entry
-* Reports
+
 

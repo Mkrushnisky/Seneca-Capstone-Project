@@ -41,7 +41,6 @@ C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.dll
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.pdb
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\MySql.Data.dll
-C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\MySql.Data.xml
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.dll
 C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
@@ -51,3 +50,22 @@ C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\
 C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
 C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.dll
 C:\Users\Pat\Documents\GitHub\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.dll.config
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.dll
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\bin\A1 - Website UI.pdb
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\bin\MySql.Data.dll
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.csprojResolveAssemblyReference.cache
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\obj\Debug\RdlCompile.cache
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\obj\Debug\RdlCompile.compiled
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.dll
+C:\Users\Medievals\Desktop\A1 - Website UI v2\A1 - Website UI\obj\Debug\A1 - Website UI.pdb
+C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\RdlCompile.cache
+C:\Users\Medievals\Documents\Team22Repo\A1 - Website UI v2\A1 - Website UI\obj\Debug\RdlCompile.compiled
