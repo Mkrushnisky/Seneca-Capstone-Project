@@ -345,6 +345,10 @@ namespace A1___Website_UI
             if (SubCategoryListBox.SelectedItem != null)
             {
                 ToAddListBox.Items.Add(SubCategoryListBox.SelectedItem);
+                if(ToAddListBox.Items.Count > 0)
+                {
+
+                }
             }
         }
 

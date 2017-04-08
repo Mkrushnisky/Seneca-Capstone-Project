@@ -22,9 +22,6 @@
 
             <%-- Supplier Basic Information --%>
             <div class="col-md-5">
-                <asp:CheckBox ID="DistributorCB" runat="server" Font-Size="Large" Checked="false" AutoPostBack="true"/>
-                    <label for="DistributorCB" style="font-size: 17px;">Distributor?</label>
-
                     <asp:DropDownList ID="SupplierDDL" CssClass="txtbox" runat="server" Visible="False" EnableTheming="True" Width="176px">
                     </asp:DropDownList>
                 <%-- Supplier Name --%>
