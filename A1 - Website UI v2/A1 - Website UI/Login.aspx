@@ -28,7 +28,6 @@
       <div class="container">
         <div class="navbar-header">
     <img src="Image/DG_Associates_Logo_Landscape.png" width="200px"/>
-          <%--<a href="../" class="navbar-brand">DG & Associates Inc.</a>--%>
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
