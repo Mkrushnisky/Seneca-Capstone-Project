@@ -93,6 +93,7 @@
     <Content Include="default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Image\add-button-md.png" />
+    <Content Include="Image\DG_Associates_Logo_Landscape.png" />
     <Content Include="Image\nexkk371.bmp" />
     <Content Include="Register.aspx" />
     <Content Include="Login.aspx" />
