@@ -5,9 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <div class="row">
-        <div class="jumbotron">
+        <div class="jumbotron" align="center">
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Height="500px" AsyncRendering="False" ShowBackButton="false" ShowFindControls="false" SizeToReportContent="True" ShowPageNavigationControls="false" ShowRefreshButton="false">
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="821px" Height="500px" AsyncRendering="false" ShowBackButton="false" ShowFindControls="false" ShowPageNavigationControls="true" ShowRefreshButton="false">
 
                 </rsweb:ReportViewer>
         </div>

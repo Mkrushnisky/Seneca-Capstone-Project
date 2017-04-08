@@ -99,12 +99,19 @@
                     </ul>
                 </li>
                 <li id="addDropdown" runat="server">
-                    <a onclick="subMenu2Toggle" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-plus"></i> Add<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <a onclick="subMenu2Toggle" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-plus"></i> Add<i class="fa fa-fw pull-right"></i></a>
                     <ul id="submenu-2" class="collapse panel-collapse in">
                         <li><a href="/SupplierAdd.aspx"><i class="fa fa-angle-double-right"></i> Supplier/Distributor</a></li>
                         <li><a href="/CategoryAdd.aspx"><i class="fa fa-angle-double-right"></i> Category</a></li>
                         <li><a href="/SubCategoryAdd.aspx"><i class="fa fa-angle-double-right"></i> Sub-Category</a></li>
                         <li><a href="/ContactAdd.aspx"><i class="fa fa-angle-double-right"></i> Contacts</a></li>
+                    </ul>
+                </li>
+                <li runat="server">
+                    <a><i class="fa fa-fw fa-list"></i> Reports<i class="fa fa-fw pull-right"></i></a>
+                    <ul id="submenu-3" class="collapse panel-collapse in">
+                        <li><a href="/ContactsReport.aspx"><i class="fa fa-angle-double-right"></i> Contact Report</a></li>
+                        <li><a href="/SubCategoryReport.aspx"><i class="fa fa-angle-double-right"></i> Sub-Category Report</a></li>
                     </ul>
                 </li>
             </ul>

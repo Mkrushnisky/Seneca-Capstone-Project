@@ -16,12 +16,15 @@ namespace A1___Website_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ReportViewer1.Reset();
-            ReportViewer1.LocalReport.ReportPath = "ReportSupplier.rdlc";
-            ReportDataSource rs = new ReportDataSource("DataSet1", GetSupplierData());
-            ReportViewer1.LocalReport.DataSources.Add(rs);
-            ReportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(SetSubDataSource);
-            ReportViewer1.LocalReport.Refresh();
+            if (!IsPostBack)
+            {
+                ReportViewer1.Reset();
+                ReportViewer1.LocalReport.ReportPath = "ReportSupplier.rdlc";
+                ReportDataSource rs = new ReportDataSource("DataSet1", GetSupplierData());
+                ReportViewer1.LocalReport.DataSources.Add(rs);
+                ReportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(SetSubDataSource);
+                ReportViewer1.LocalReport.Refresh();
+            }
         }
 
 
