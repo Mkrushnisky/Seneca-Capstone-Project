@@ -79,10 +79,49 @@
                         </div>                    
                     </div>
                 </div>
-                <asp:Button ID="Button1" CssClass="btn-primary btn-lg" runat="server" Text="Save" OnClick="Button1_Click"  />
+                <asp:Button ID="Button1" CssClass="btn-primary btn-lg" runat="server" Text="Save" OnClick="Button1_Click" ValidationGroup="ContactValidation" />
             <asp:Button ID="Button2" CssClass="btn-lg" runat="server" Text="Cancel" OnClick="Button2_Click" />
             </div>
         
     </div>
 
+         <%--validation for selecting Supplier--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DropDownList1" InitialValue="NA"
+            Display="None" ErrorMessage="Must select a Supplier/Distributor" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact first name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="FNameTB"
+            Display="None" ErrorMessage="Contact's First Name is Required" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact Last name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="LNameTB"
+            Display="None" ErrorMessage="Contact's Last Name is Required" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact's Street name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="CStreetTB"
+            Display="None" ErrorMessage="Contact's Street name is Required" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact's city name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="CCityTB"
+            Display="None" ErrorMessage="Contact's City name is Required" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact's country--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="CCountryDDL" InitialValue="0"
+            Display="None" ErrorMessage="Contact's Country is Required" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact's Province--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="CProvinceDDL" InitialValue="NA"
+            Display="None" ErrorMessage="Contact's Province is Required for within Canada/US" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact email--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="CEmailTB"
+            Display="None" ErrorMessage="Contact's email is Required" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact work number--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="WorkTB"
+            Display="None" ErrorMessage="Contact's work number is Required" ValidationGroup="ContactValidation"></asp:RequiredFieldValidator>
+
+    <%--validation group for contact edit--%>
+    <asp:ValidationSummary ID="ValidationSummary2" runat="server" ShowMessageBox="True"
+        ShowSummary="False" ValidationGroup="ContactValidation" />
 </asp:Content>

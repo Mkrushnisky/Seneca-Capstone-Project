@@ -33,7 +33,6 @@ namespace A1___Website_UI
                     }
                 }
                 SupIdHF.Value = Request.QueryString["supplier"];
-                SupplierBind();
                 CategoryBind();
                 SubCategoryBind(sender, e);
                 edit(sender, e);
@@ -43,29 +42,7 @@ namespace A1___Website_UI
 
         }
 
-        //Database connection for Supplier information to bind it to the supplier dropdown list
-        protected void SupplierBind()
-        {
-            using (var conn = new MySqlConnection(strcon))
-            {
-                conn.Open();
-                string Query = "SELECT Supplier.* FROM Supplier";
-                using (var cmd = new MySqlCommand(Query, conn))
-                {
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            SupplierDDL.DataSource = reader;
-                            SupplierDDL.DataValueField = "SupId";
-                            SupplierDDL.DataTextField = "SName";
-                            SupplierDDL.DataBind();
-                            SupplierDDL.Items.Insert(0, new ListItem("--- Choose One ---", "NA"));
-                        }
-                    }
-                }
-            }
-        }
+        
 
         //Database connection for Province/State information to bind it to the ProvinceState Dropdownlist
         protected void Province(object sender, EventArgs e)
@@ -618,7 +595,7 @@ namespace A1___Website_UI
             CStreetTB.Text = String.Empty;
             CCityTB.Text = String.Empty;
             CCountryDDL.SelectedIndex = 0;
-            CProvinceDDL.Text = String.Empty;
+            CProvinceDDL.SelectedIndex = 0;
             CPostalCodeTB.Text = String.Empty;
             CEmailTB.Text = String.Empty;
             WorkTB.Text = String.Empty;

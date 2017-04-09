@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TrueMaster.Master" AutoEventWireup="true" CodeBehind="SupplierAdd.aspx.cs" Inherits="A1___Website_UI.WebForm1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<%--    <style type="text/css">
+    <%--    <style type="text/css">
         .auto-style1 {
             width: 236px;
         }
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="row">
                 <div class="col-md-5">
-                <h3>Add New Supplier</h3>
+                    <h3>Add New Supplier</h3>
                 </div>
                 <div class="col-md-3">
                     <asp:TextBox ID="GetSupNum" runat="server" Visible="false" Width="26px"></asp:TextBox>
@@ -29,24 +29,24 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <asp:CheckBox ID="CheckBox1" runat="server" Font-Size="Large" OnCheckedChanged="CheckBox1_CheckedChanged" Checked="false" AutoPostBack="true"/>
+                <asp:CheckBox ID="CheckBox1" runat="server" Font-Size="Large" OnCheckedChanged="CheckBox1_CheckedChanged" Checked="false" AutoPostBack="true" />
                 <label for="CheckBox1" style="font-size: 17px;">Distributor?</label>
 
-                <asp:DropDownList ID="DropDownList1" cssclass="form-control" runat="server" Visible="False" EnableTheming="True">
+                <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server" Visible="False" EnableTheming="True">
                 </asp:DropDownList>
                 <div class="form-group">
                     <label for="TextBox1" class="col-sm-10 control-label" style="font-size: 17px;">Name</label>
-                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Supplier/Distributor Name"></asp:TextBox>
+                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="*Supplier/Distributor Name"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="StreetTB" class="col-sm-10 control-label" style="font-size: 17px;">Supplier Name</label>
-                    <asp:TextBox ID="StreetTB" CssClass="form-control" runat="server" placeholder="Street Address"></asp:TextBox>
-                    <div class="form-inline" style="padding-top:10px">
-                        <asp:TextBox CssClass="form-control" ID="CityTB" runat="server" placeholder="City" Width="49%"></asp:TextBox>
+                    <asp:TextBox ID="StreetTB" CssClass="form-control" runat="server" placeholder="*Street Address"></asp:TextBox>
+                    <div class="form-inline" style="padding-top: 10px">
+                        <asp:TextBox CssClass="form-control" ID="CityTB" runat="server" placeholder="*City" Width="49%"></asp:TextBox>
 
                         <asp:DropDownList ID="CountryDDL" runat="server" CssClass="form-control" OnSelectedIndexChanged="CountryDDL_SelectedIndexChanged" AutoPostBack="True" Width="50%">
                             <asp:ListItem Value="0" Text="--- Choose Country ---"></asp:ListItem>
-                            <asp:ListItem Value ="1">Canada</asp:ListItem>
+                            <asp:ListItem Value="1">Canada</asp:ListItem>
                             <asp:ListItem Value="2">United States</asp:ListItem>
                             <asp:ListItem>Mexico</asp:ListItem>
                             <asp:ListItem>China</asp:ListItem>
@@ -68,7 +68,7 @@
                             <asp:ListItem>Romania</asp:ListItem>
                         </asp:DropDownList>
                     </div>
-                    <div class="form-inline" style="padding-top:10px">
+                    <div class="form-inline" style="padding-top: 10px">
                         <asp:DropDownList ID="ProvinceDDL" CssClass="form-control" runat="server" Enabled="false" Width="49%"></asp:DropDownList>
                         <asp:TextBox ID="PostalCodeTB" CssClass="form-control" runat="server" placeholder="Postal Code" Width="50%"></asp:TextBox>
                     </div>
@@ -79,20 +79,19 @@
                 <div class="form-group">
                     <div class="form-inline">
                         <label for="FNameTB" class="col-sm-10 control-label" style="font-size: 17px;">Name</label>
-                        <asp:TextBox ID="FNameTB" CssClass="form-control" runat="server" placeholder="First Name" Width="49%"></asp:TextBox>
-                        <asp:TextBox ID="LNameTB" CssClass="form-control" runat="server" placeholder="Last Name" Width="50%"></asp:TextBox>
+                        <asp:TextBox ID="FNameTB" CssClass="form-control" runat="server" placeholder="*First Name" Width="49%"></asp:TextBox>
+                        <asp:TextBox ID="LNameTB" CssClass="form-control" runat="server" placeholder="*Last Name" Width="50%"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="CStreetTB" class="col-sm-10 control-label" style="font-size: 17px;">Address</label>
                         <asp:TextBox ID="CStreetTB" CssClass="form-control" runat="server" placeholder="Street Address"></asp:TextBox>
                         <div class="form-inline">
-
                         </div>
-                        <div class="form-inline" style="padding-top:10px">
+                        <div class="form-inline" style="padding-top: 10px">
                             <asp:TextBox CssClass="form-control" ID="CCityTB" runat="server" placeholder="City" Width="49%"></asp:TextBox>
                             <asp:DropDownList ID="CCountryDDL" runat="server" CssClass="form-control" OnSelectedIndexChanged="CCountryDDL_SelectedIndexChanged" AutoPostBack="True" Width="50%">
                                 <asp:ListItem Value="0" Text="--- Choose Country ---"></asp:ListItem>
-                                <asp:ListItem Value ="1">Canada</asp:ListItem>
+                                <asp:ListItem Value="1">Canada</asp:ListItem>
                                 <asp:ListItem Value="2">United States</asp:ListItem>
                                 <asp:ListItem>Mexico</asp:ListItem>
                                 <asp:ListItem>China</asp:ListItem>
@@ -114,47 +113,155 @@
                                 <asp:ListItem>Romania</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <div class="form-inline" style="padding-top:10px">
+                        <div class="form-inline" style="padding-top: 10px">
                             <asp:DropDownList ID="CProvinceDDL" CssClass="form-control" runat="server" Enabled="false" Width="49%"></asp:DropDownList>
                             <asp:TextBox ID="CPostalCodeTB" CssClass="form-control" runat="server" placeholder="Postal Code" Width="50%"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="CEmailTB" class="col-sm-10 control-label" style="font-size: 17px;">Email</label>
-                        <asp:TextBox ID="CEmailTB" CssClass="form-control" runat="server" placeholder="example@somewhere.com"></asp:TextBox>
+                        <asp:TextBox ID="CEmailTB" CssClass="form-control" runat="server" placeholder="*example@somewhere.com"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="WorkTB" class="col-sm-10 control-label" style="font-size: 17px;">Phone Numbers</label>
-                        <asp:TextBox ID="WorkTB" CssClass="form-control" runat="server" placeholder="Work Phone"></asp:TextBox>
-                        <div style="padding-top:10px">
+                        <asp:TextBox ID="WorkTB" CssClass="form-control" runat="server" placeholder="*Work Phone"></asp:TextBox>
+                        <div style="padding-top: 10px">
                             <asp:TextBox CssClass="form-control" ID="CellTB" runat="server" placeholder="Cell Phone"></asp:TextBox>
-                        </div>                    
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="jumbotron" style="border:3px solid #ffffff">
+                <div class="jumbotron" style="border: 3px solid #ffffff">
                     <div class="row">
                         <h3>Add Sub-Categories</h3>
                     </div>
                     <div class="form-group">
                         <label for="CategoryDropDown" class="col-sm-10 control-label" style="font-size: 17px;">Category</label>
                         <asp:DropDownList ID="CategoryDropDown" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="CategoryDropDown_SelectedIndexChanged">
-                            </asp:DropDownList>
+                        </asp:DropDownList>
                     </div>
                     <div class="form-group">
                         <div class="form-inline">
                             <asp:ListBox ID="SubCategoryListBox" CssClass="form-control" runat="server" Width="45%" Height="168px"></asp:ListBox>
-                            <asp:ImageButton ID="ImageButton1" runat="server" Height="25px" Width="25px" ImageUrl="~/Image/nexkk371.bmp"  OnClick="ImageButton1_Click"/>
+                            <asp:ImageButton ID="ImageButton1" runat="server" Height="25px" Width="25px" ImageUrl="~/Image/nexkk371.bmp" OnClick="ImageButton1_Click" />
                             <asp:ListBox ID="ToAddListBox" CssClass="form-control" runat="server" Width="45%" Height="168px" SelectionMode="Multiple"></asp:ListBox>
                         </div>
                     </div>
-                </div>                          
-            </div>   
+                </div>
+            </div>
         </div>
-        <div class="row" style="text-align:center">
-            <asp:Button ID="Button1" CssClass="btn-primary btn-lg" runat="server" Text="Save" OnClick="Button1_Click"  />
-            <asp:Button ID="Button2" CssClass="btn-lg" runat="server" Text="Cancel" OnClick="Button2_Click" />
+        <%--validation for Supplier/Distributor's name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorName" runat="server" ControlToValidate="TextBox1"
+            Display="None" ErrorMessage="Supplier/Distributor Name is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for Supplier/Distributor's Street name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="StreetTB"
+            Display="None" ErrorMessage="Supplier/Distributor's Street name is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for Supplier/Distributor's city name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="CityTB"
+            Display="None" ErrorMessage="Supplier/Distributor's City name is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for Supplier/Distributor's country--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="CountryDDL" InitialValue="0"
+            Display="None" ErrorMessage="Supplier/Distributor's Country is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for Supplier/Distributor's Province--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="ProvinceDDL" InitialValue="NA"
+            Display="None" ErrorMessage="Supplier/Distributor's Province is Required for within Canada/US" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact first name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="FNameTB"
+            Display="None" ErrorMessage="Contact's First Name is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact Last name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="LNameTB"
+            Display="None" ErrorMessage="Contact's Last Name is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact email--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="CEmailTB"
+            Display="None" ErrorMessage="Contact's email is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for contact work number--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="WorkTB"
+            Display="None" ErrorMessage="Contact's work number is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+        <%--validation for Sub-Category for Supplier--%>
+        <asp:CustomValidator
+            runat="server"
+            ControlToValidate="ToAddListBox"
+            ErrorMessage="Must have at least one Sub-Category"
+            ClientValidationFunction="ListBoxValid"
+            ValidateEmptyText="True" 
+            ValidationGroup="Validation"
+            Display="None"
+            />
+
+        <script type="Text/JavaScript">
+            function ListBoxValid(sender, args) {
+                var ctlDropDown = document.getElementById(sender.controltovalidate);
+                args.IsValid = ctlDropDown.options.length > 0;
+            }
+
+            
+        </script>
+
+         <%--validation for Supplier selection in distributor--%>
+        <asp:CustomValidator
+            runat="server"
+            ControlToValidate="DropDownList1"
+            ControlToCompare="CheckBox1"
+            ErrorMessage="Must select a Supplier for this distributor"
+            ClientValidationFunction="CheckSupplierValid"
+            ValidateEmptyText="True" 
+            ValidationGroup="Validation"
+            Display="None"
+            InitialValue="NA"
+            />
+
+        <script type="Text/JavaScript">
+            function CheckSupplierValid(sender, args) {
+                var ctlDropDown = document.getElementById(sender.controltovalidate);
+                var ctlCheckBox = document.getElementById('<%=CheckBox1.ClientID%>');
+                if (ctlCheckBox.checked)
+                {
+                    args.IsValid = args.Value != "NA";
+                }
+                
+            }
+
+            
+        </script>
+
+        
+
+       <%-- <asp:CustomValidator ID="customValidator1" runat="server"
+        ErrorMessage="Province/State is requred for Canada/US"
+        ControlToValidate="ProvinceDDL" 
+            OnServerValidate="customValidator1_ServerValidate"
+            ValidationGroup="Validation"  Display="None"
+        />
+
+        <script type="text/javascript">
+    function validate(s,args){
+        if (document.getElementById("<%= CountryDDL.ID %>").getAttribute("value") == "1" || document.getElementById("<%= CountryDDL.ID %>").getAttribute("value") == "2") {
+            args.IsValid = args.Value != "NA"; 
+
+        }
+        else{
+            args.IsValid = true;
+        }
+    }
+</script>--%>
+
+        <%--validation group for Supplier/Distributor add--%>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+            ShowSummary="False" ValidationGroup="Validation" />
+
+        <div class="row" style="text-align: center">
+            <asp:Button ID="Button1" CssClass="btn-primary btn-lg" runat="server" Text="Save" OnClick="saveButtonClick" CausesValidation="true" ValidationGroup="Validation" />
+            <asp:Button ID="Button2" CssClass="btn-lg" runat="server" Text="Cancel" OnClick="Button2_Click" CausesValidation="false" />
         </div>
     </div>
 
@@ -421,5 +528,4 @@
     </tr>
     </table>
     </div>--%>
-
 </asp:Content>
