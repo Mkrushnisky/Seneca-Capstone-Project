@@ -206,6 +206,18 @@ namespace A1___Website_UI
                 }
             }
         }
+        protected void saveButtonClick(object sender, EventArgs e)
+        {
+            if(Page.IsValid)
+            {
+                Button1_Click(sender, e);
+            }
+            else
+            {
+
+            }
+        }
+
         //Save button.  INSERTS base Supplier information to create Id, calls that new Id, then INSERTS the rest of the data based on that Id.
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -278,7 +290,7 @@ namespace A1___Website_UI
                 }
                 conn.Close();
             }
-            
+
             //Adds Sub-Categories to Supplier
 
             for (int i = 0; i < ToAddListBox.Items.Count; i++)
@@ -298,12 +310,20 @@ namespace A1___Website_UI
 
             //Add Contact Address
             conn.Open();
-            string AddCAddress = "INSERT INTO Address (AddressId, Street, City, Province, PostalCode, Country) VALUES ( NULL, '" + CStreetTB.Text + "', '" + CCityTB.Text + "', '" + CProvinceDDL.SelectedItem + "', '" + CPostalCodeTB.Text + "', '" + CCountryDDL.SelectedItem.Text + "')";
-            cmd = new MySqlCommand(AddCAddress, conn);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
+            if (CStreetTB.Text != String.Empty && CCityTB.Text != String.Empty && CProvinceDDL.SelectedValue != "NA" && CCountryDDL.SelectedValue != "NA")
+            { 
+                string AddCAddress = "INSERT INTO Address (AddressId, Street, City, Province, PostalCode, Country) VALUES ( NULL, '" + CStreetTB.Text + "', '" + CCityTB.Text + "', '" + CProvinceDDL.SelectedItem + "', '" + CPostalCodeTB.Text + "', '" + CCountryDDL.SelectedItem.Text + "')";
+                cmd = new MySqlCommand(AddCAddress, conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                }
             }
+            else
+            {
+
+            }
+            
             conn.Close();
 
             //Get Address Id to put into Contact
@@ -378,6 +398,19 @@ namespace A1___Website_UI
             {
                 CProvinceDDL.Enabled = false;
                 CProvinceDDL.Items.Clear();
+            }
+        }
+
+        protected void customValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            try
+            {
+                args.IsValid = args.Value != "NA";
+            }
+
+            catch (Exception ex)
+            {
+                args.IsValid = false;
             }
         }
     }

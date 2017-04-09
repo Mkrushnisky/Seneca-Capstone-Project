@@ -27,7 +27,7 @@
                 <div class="col-md-4">
                 </div>
                 <div class="col-md-3" style="text-align:right; padding-top:7px">
-                    <asp:Button ID="SaveBT" CssClass="btn-primary " runat="server" Text="Save" OnClick="SaveBT_Click"  />
+                    <asp:Button ID="SaveBT" CssClass="btn-primary " runat="server" Text="Save" OnClick="SaveBT_Click"  ValidationGroup="Validation"/>
                     <asp:Button ID="CancelBT" CssClass="" runat="server" Text="Cancel" OnClick="CancelBT_Click" />
                 </div>
                 <div class="col-md-3">
@@ -38,5 +38,13 @@
             </div>
         </div>
     </div>
+
+    <%--validation for Category's name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorName" runat="server" ControlToValidate="CategoryTB"
+            Display="None" ErrorMessage="Category Name is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+    <%--validation group for Category add--%>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+            ShowSummary="False" ValidationGroup="Validation" />
    
 </asp:Content>

@@ -37,7 +37,7 @@
                                 <asp:TextBox ID="SubCategoryTB" CssClass="form-control pull-left" Width="100%" runat="server" placeholder="Sub-Category Name"></asp:TextBox>
                             </div>
                             <div class="col-md-2">
-                                <asp:ImageButton ID="ToAddIMG" runat="server"  Height="25px" Width="25px" ImageUrl="~/Image/nexkk371.bmp" OnClick="ToAddIMG_Click"/>
+                                <asp:ImageButton ID="ToAddIMG" runat="server"  Height="25px" Width="25px" ImageUrl="~/Image/nexkk371.bmp" OnClick="ToAddIMG_Click" ValidationGroup="Validation"/>
                             </div>
                         </div>
                     </div>
@@ -81,4 +81,16 @@
             </div>
         </div>
     </div>
+
+     <%--validation for Category--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="CategoryDDL" InitialValue="NA"
+            Display="None" ErrorMessage="Category is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+    <%--validation for subcategory's name--%>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorName" runat="server" ControlToValidate="SubCategoryTB"
+            Display="None" ErrorMessage="Subcategory Name is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+
+    <%--validation group for subcategory add--%>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+            ShowSummary="False" ValidationGroup="Validation" />
 </asp:Content>

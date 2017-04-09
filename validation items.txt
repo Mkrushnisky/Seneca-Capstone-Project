@@ -1,0 +1,118 @@
+
+Supplier Add-=================================================================================================================
+ <%--<asp:RequiredFieldValidator ID="RequiredFieldValidatorName" runat="server" ControlToValidate="txtNameRequired"
+        Display="None" ErrorMessage="Name is Required" ValidationGroup="Validation"></asp:RequiredFieldValidator>
+        
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+        ShowSummary="False" ValidationGroup="Validation" />--%>
+
+		
+    <%--<asp:CustomValidator ID="cv1" runat="server"
+        ErrorMessage="Name is required" Text="*"
+        ControlToValidate="TextBox1" ClientValidationFunction="validate" 
+        InitialValue="Please select"
+        />
+
+        <script type="text/javascript">
+    function validate(s,args){
+        if(document.getElementById("<%= checkboxId.ClientID %>").checked){
+            args.IsValid = args.Value != s.InitialValue; <%-- custom dropbox validations --%>
+
+        }
+        else{
+            args.IsValid = true;
+        }
+    }
+</script>--%>
+
+    <%--validation for:
+        Supplier:
+        Supplier name -> TextBox:TextBox1 :: edit:SubCategoryTB
+        Address don't need province				
+		street -> TextBox:StreetTB
+		city -> TextBox:CityTB
+		postalCode -> TextBox:PostalCodeTB // NOT ALWAYS AVAILABLE aka no validation required
+		country -> DropDownList:CountryDDL
+		province -> DropDownList:ProvinceDDL // only when country is Canada or USA
+        
+        Contact:
+		must be linked to supplier -> ???
+        first -> TextBox:FNameTB
+		last name -> TextBox:LNameTB
+        Address don't need province // not needed since it's linked to supplier and will always be linked
+			street -> TextBox:CStreetTB
+			city -> TextBox:CCityTB
+			country -> DropDownList:CCountryDDL
+			province -> DropDownList:CProvinceDDL // only when country is Canada or USA
+        email -> TextBox:CEmailTB
+		work number -> TextBox:WorkTB
+		
+		
+        subcategory -> Listbox:ToAddListBox // custom validator 
+		
+		distributor:
+		check box -> CheckBox1
+		supplier selection -> DropDownList:DropDownList1
+
+		
+		<%--validation for Sub-Category for Supplier--%>
+        <asp:CustomValidator
+            runat="server"
+            ControlToValidate="ToAddListBox"
+            ErrorMessage="Must have at least one Sub-Category"
+            ClientValidationFunction="ListBoxValid"
+            ValidateEmptyText="True" 
+            ValidationGroup="Validation"
+            Display="Dynamic"
+            />
+
+        <script type="Text/JavaScript">
+            function ListBoxValid(sender, args) {
+                var ctlDropDown = document.getElementById(sender.controltovalidate);
+                args.IsValid = ctlDropDown.options.length > 0;
+            }
+
+            
+        </script>
+        
+
+<asp:CustomValidator 
+     runat="server" 
+     ControlToValidate="listbox1"
+     ErrorMessage="Add some items yo!" 
+     ClientValidationFunction="checkListBox"
+     Display="Dynamic"
+     ValidateEmptyText="True"
+/>
+
+<script type="Text/JavaScript">
+  function checkListBox(sender, args)
+  {
+      args.IsValid = sender.options.length > 0;
+  }
+        or
+
+        function ListBoxValid(sender, args)
+{
+        var ctlDropDown = document.getElementById(sender.controltovalidate);
+        args.IsValid = ctlDropDown.options.length > 0; 
+}
+</script>    
+
+    --%>
+	
+Supplier Add end-===========================================================================================================================
+
+category add -===========================================================================================================================
+category name
+category add end-===========================================================================================================================
+
+sub-category add -===========================================================================================================================
+dropdown custom validator for category
+sub-cat name
+sub-cat end-===========================================================================================================================
+
+contact add -===========================================================================================================================
+dropdown custom validator for supplier/distributor
+same as supplier 
+contact add end-===========================================================================================================================

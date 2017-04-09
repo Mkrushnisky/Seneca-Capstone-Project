@@ -620,7 +620,8 @@ namespace A1___Website_UI
             CStreetTB.Text = String.Empty;
             CCityTB.Text = String.Empty;
             CCountryDDL.SelectedIndex = 0;
-            CProvinceDDL.Text = String.Empty;
+            CProvinceDDL.SelectedIndex = 0;
+
             CPostalCodeTB.Text = String.Empty;
             CEmailTB.Text = String.Empty;
             WorkTB.Text = String.Empty;
