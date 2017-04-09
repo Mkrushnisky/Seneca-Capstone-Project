@@ -24,12 +24,6 @@
 
             <%-- Supplier Basic Information --%>
             <div class="col-md-5">
-<<<<<<< HEAD
-
-=======
-                    <asp:DropDownList ID="SupplierDDL" CssClass="txtbox" runat="server" Visible="False" EnableTheming="True" Width="176px">
-                    </asp:DropDownList>
->>>>>>> refs/remotes/origin/master
                 <%-- Supplier Name --%>
                 <div class="form-group">
                     <label for="SupplierNameTB" style="font-size: 17px;">Supplier Name</label>
