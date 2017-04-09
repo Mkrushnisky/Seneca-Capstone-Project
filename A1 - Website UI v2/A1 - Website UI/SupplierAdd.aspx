@@ -39,10 +39,17 @@
                     <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="*Supplier/Distributor Name"></asp:TextBox>
                 </div>
                 <div class="form-group">
+<<<<<<< HEAD
                     <label for="StreetTB" class="col-sm-10 control-label" style="font-size: 17px;">Supplier Name</label>
                     <asp:TextBox ID="StreetTB" CssClass="form-control" runat="server" placeholder="*Street Address"></asp:TextBox>
                     <div class="form-inline" style="padding-top: 10px">
                         <asp:TextBox CssClass="form-control" ID="CityTB" runat="server" placeholder="*City" Width="49%"></asp:TextBox>
+=======
+                    <label for="StreetTB" class="col-sm-10 control-label" style="font-size: 17px;">Address</label>
+                    <asp:TextBox ID="StreetTB" CssClass="form-control" runat="server" placeholder="Street Address"></asp:TextBox>
+                    <div class="form-inline" style="padding-top:10px">
+                        <asp:TextBox CssClass="form-control" ID="CityTB" runat="server" placeholder="City" Width="49%"></asp:TextBox>
+>>>>>>> refs/remotes/origin/master
 
                         <asp:DropDownList ID="CountryDDL" runat="server" CssClass="form-control" OnSelectedIndexChanged="CountryDDL_SelectedIndexChanged" AutoPostBack="True" Width="50%">
                             <asp:ListItem Value="0" Text="--- Choose Country ---"></asp:ListItem>
