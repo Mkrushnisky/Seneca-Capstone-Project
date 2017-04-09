@@ -26,9 +26,10 @@ No changes so far
 * Edit Contact Page
 * Add Contact Page
 * Reports
+* Validation of Data Entry
+
 
 ## To-do
 
-* Validation of Data Entry
 
 
