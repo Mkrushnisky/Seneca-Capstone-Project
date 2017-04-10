@@ -627,5 +627,13 @@ namespace A1___Website_UI
             WorkTB.Text = String.Empty;
             CellTB.Text = String.Empty;
         }
+
+        protected void removeBTN_Click(object sender, EventArgs e)
+        {
+            if (ToAddListBox.SelectedItem != null)
+            {
+                ToAddListBox.Items.Remove(ToAddListBox.SelectedItem);
+            }
+        }
     }
 }
