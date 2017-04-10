@@ -139,6 +139,15 @@ namespace A1___Website_UI {
         protected global::System.Web.UI.WebControls.ListBox ToAddListBox;
         
         /// <summary>
+        /// removeBTN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button removeBTN;
+        
+        /// <summary>
         /// ContactGV control.
         /// </summary>
         /// <remarks>
