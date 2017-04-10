@@ -148,6 +148,9 @@
                             <asp:ImageButton ID="ImageButton1" runat="server" Height="25px" Width="25px" ImageUrl="~/Image/nexkk371.bmp" OnClick="ImageButton1_Click" />
                             <asp:ListBox ID="ToAddListBox" CssClass="form-control" runat="server" Width="45%" Height="168px" SelectionMode="Multiple"></asp:ListBox>
                         </div>
+                        <div class="row" align="right" style="padding-right:1%">
+                            <asp:Button ID="Button3" CssClass="btn-primary btn-sm" runat="server" Text="Remove" OnClick="Button3_Click" />
+                        </div>
                     </div>
                 </div>
             </div>

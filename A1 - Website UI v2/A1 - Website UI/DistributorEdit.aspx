@@ -91,6 +91,9 @@
                             <asp:ImageButton ID="ImageButton1" runat="server" Height="25px" ImageUrl="~/Image/nexkk371.bmp" Width="25px" OnClick="ImageButton1_Click" />
                             <asp:ListBox ID="ToAddListBox" CssClass="form-control" runat="server" Width="45%" Height="168px" SelectionMode="Multiple"></asp:ListBox>
                         </div>
+                        <div class="row" align="right" style="padding-right:1%">
+                            <asp:Button ID="removeBTN" CssClass="btn-primary btn-sm" runat="server" Text="Remove" OnClick="removeBTN_Click" />
+                        </div>
 
                     </div>
                 </div>
@@ -194,7 +197,7 @@
         </div>
         <div class="row" style="text-align: center">
             <asp:Button ID="UpdateButton" runat="server" CssClass="btn-primary btn-lg" Text="Save" OnClick="UpdateButton_Click" ValidationGroup="Validation" />
-            <asp:Button ID="CancelButton" runat="server" CssClass=" btn btn-lg" Text="Cancel" OnClick="CancelButton_Click" />
+            <asp:Button ID="CancelButton" runat="server" CssClass="btn-lg" Text="Cancel" OnClick="CancelButton_Click" />
         </div>
         <div class="row col-md-5">
             <div class="row">

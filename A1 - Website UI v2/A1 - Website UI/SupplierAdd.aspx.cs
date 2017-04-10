@@ -366,10 +366,6 @@ namespace A1___Website_UI
             if (SubCategoryListBox.SelectedItem != null)
             {
                 ToAddListBox.Items.Add(SubCategoryListBox.SelectedItem);
-                if(ToAddListBox.Items.Count > 0)
-                {
-
-                }
             }
         }
 
@@ -411,6 +407,14 @@ namespace A1___Website_UI
             catch (Exception ex)
             {
                 args.IsValid = false;
+            }
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            if (ToAddListBox.SelectedItem != null)
+            {
+                ToAddListBox.Items.Remove(ToAddListBox.SelectedItem);
             }
         }
     }
